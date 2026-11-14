@@ -1,4 +1,4 @@
-NAME := LemonSign
+NAME := 2809
 PLATFORM := iphoneos
 SCHEMES := Ksign
 TMP := $(TMPDIR)/$(NAME)
@@ -44,24 +44,28 @@ $(SCHEMES): deps
 	rm -rf "$(STAGE)/"
 	mkdir -p "$(STAGE)/Payload"
 
-	@if [ -d "$(APP)/LemonSign.app" ]; then \
-		mv "$(APP)/LemonSign.app" "$(STAGE)/Payload/LemonSign.app"; \
+	@if [ -d "$(APP)/2809.app" ]; then \
+		mv "$(APP)/2809.app" "$(STAGE)/Payload/2809.app"; \
+	elif [ -d "$(APP)/$(NAME).app" ]; then \
+		mv "$(APP)/$(NAME).app" "$(STAGE)/Payload/2809.app"; \
+	elif [ -d "$(APP)/LemonSign.app" ]; then \
+		mv "$(APP)/LemonSign.app" "$(STAGE)/Payload/2809.app"; \
 	elif [ -d "$(APP)/$@.app" ]; then \
-		mv "$(APP)/$@.app" "$(STAGE)/Payload/LemonSign.app"; \
+		mv "$(APP)/$@.app" "$(STAGE)/Payload/2809.app"; \
 	else \
-		mv "$$(find $(APP) -name '*.app' -maxdepth 1)" "$(STAGE)/Payload/LemonSign.app"; \
+		mv "$$(find $(APP) -name '*.app' -maxdepth 1)" "$(STAGE)/Payload/2809.app"; \
 	fi
 
-	chmod -R 0755 "$(STAGE)/Payload/LemonSign.app"
-	strip -x -S "$(STAGE)/Payload/LemonSign.app/LemonSign" 2>/dev/null || true
-	codesign --force --sign - --timestamp=none "$(STAGE)/Payload/LemonSign.app"
+	chmod -R 0755 "$(STAGE)/Payload/2809.app"
+	strip -x -S "$$(find $(STAGE)/Payload/2809.app -maxdepth 1 -type f -perm +111 2>/dev/null | head -n 1)" 2>/dev/null || true
+	codesign --force --sign - --timestamp=none "$(STAGE)/Payload/2809.app"
 
-	cp deps/* "$(STAGE)/Payload/LemonSign.app/" || true
-	cp -f Ksign/Resources/AppIcons/*.png "$(STAGE)/Payload/LemonSign.app/" || true
+	cp deps/* "$(STAGE)/Payload/2809.app/" || true
+	cp -f Ksign/Resources/AppIcons/*.png "$(STAGE)/Payload/2809.app/" || true
 
-	rm -rf "$(STAGE)/Payload/LemonSign.app/_CodeSignature"
+	rm -rf "$(STAGE)/Payload/2809.app/_CodeSignature"
 	ln -sf "$(STAGE)/Payload" Payload
 	
 	mkdir -p packages
-	zip -r9 "packages/LemonSign.ipa" Payload
-	rm -f packages/Ksign.ipa
+	zip -r9 "packages/2809.ipa" Payload
+	rm -f packages/LemonSign.ipa packages/Ksign.ipa

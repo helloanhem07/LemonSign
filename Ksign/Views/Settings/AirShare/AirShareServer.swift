@@ -1,6 +1,6 @@
 //
 //  AirShareServer.swift
-//  LemonSign
+//  2809
 //
 //  Created by Kasumi on 24.10.2026.
 //
@@ -17,7 +17,7 @@ final class AirShareServer: ObservableObject {
     @Published var uploadCount: Int = 0
     
     private var listener: NWListener?
-    private let queue = DispatchQueue(label: "com.lemonsign.airshare.server", qos: .userInitiated)
+    private let queue = DispatchQueue(label: "com.2809.airshare.server", qos: .userInitiated)
     let port: UInt16 = 8088
     
     private init() {}
@@ -282,7 +282,7 @@ final class AirShareServer: ObservableObject {
         
         var rowsHTML = ""
         if ipaFiles.isEmpty {
-            rowsHTML = "<tr><td colspan='3' style='text-align:center;color:#888;padding:24px;'>Chưa có file IPA nào trong thư mục Tệp của LemonSign.</td></tr>"
+            rowsHTML = "<tr><td colspan='3' style='text-align:center;color:#888;padding:24px;'>Chưa có file IPA nào trong thư mục Tệp của 2809.</td></tr>"
         } else {
             for file in ipaFiles {
                 let encodedName = file.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? file.name
@@ -304,7 +304,7 @@ final class AirShareServer: ObservableObject {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>LemonSign AirShare</title>
+            <title>2809 AirShare</title>
             <style>
                 :root {
                     --lemon: #FFD60A;
@@ -350,14 +350,14 @@ final class AirShareServer: ObservableObject {
             <div class="container">
                 <header>
                     <div class="logo">🍋</div>
-                    <h1>LemonSign AirShare</h1>
+                    <h1>2809 AirShare</h1>
                     <p class="sub">Truyền tải và quản lý tệp IPA qua mạng Wi-Fi nội bộ</p>
                     <div class="badge">🟢 Mạng LAN Đang Hoạt Động</div>
                 </header>
                 
                 <!-- Upload Box -->
                 <div class="card">
-                    <div class="card-title">📤 Tải lên Tệp IPA vào LemonSign</div>
+                    <div class="card-title">📤 Tải lên Tệp IPA vào 2809</div>
                     <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
                         <div style="font-size: 32px;">📦</div>
                         <strong style="color:#fff;display:block;margin-top:8px;">Nhấn để chọn tệp .IPA hoặc kéo thả vào đây</strong>
@@ -432,7 +432,7 @@ final class AirShareServer: ObservableObject {
                     
                     xhr.onload = () => {
                         if (xhr.status === 200) {
-                            showToast('✅ Đã chuyển thành công ' + file.name + ' vào LemonSign!');
+                            showToast('✅ Đã chuyển thành công ' + file.name + ' vào 2809!');
                             setTimeout(() => { window.location.reload(); }, 1500);
                         } else {
                             alert('Lỗi tải lên: ' + xhr.responseText);

@@ -209,7 +209,7 @@ struct BulkInstallProgressView: View {
                 
                 _activeAlert = ServerAlertInfo(
                     title: "Không nhận được Payload",
-                    message: "Máy chủ hiện tại không nhận được yêu cầu gửi Payload từ thiết bị (có thể do chứng chỉ SSL cục bộ đã hết hạn hoặc kết nối bị từ chối).\n\nLemonSign đã tự động đổi máy chủ sang:\n«\(methodName)».\n\nBạn hãy cập nhật chứng chỉ SSL mới để tiếp tục.",
+                    message: "Máy chủ hiện tại không nhận được yêu cầu gửi Payload từ thiết bị (có thể do chứng chỉ SSL cục bộ đã hết hạn hoặc kết nối bị từ chối).\n\n2809 đã tự động đổi máy chủ sang:\n«\(methodName)».\n\nBạn hãy cập nhật chứng chỉ SSL mới để tiếp tục.",
                     primaryButtonTitle: "Cập nhật SSL ngay",
                     primaryAction: {
                         _updateSSLCertificate()

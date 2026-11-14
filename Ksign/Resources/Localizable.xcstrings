@@ -38,19 +38,19 @@
         }
       }
     },
-    "LemonSign will utilize maximum device hardware resources (%d CPU cores) to accelerate signing, parallel hashing, and packaging." : {
+    "2809 will utilize maximum device hardware resources (%d CPU cores) to accelerate signing, parallel hashing, and packaging." : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign will utilize maximum device hardware resources (%d CPU cores) to accelerate signing, parallel hashing, and packaging."
+            "value" : "2809 will utilize maximum device hardware resources (%d CPU cores) to accelerate signing, parallel hashing, and packaging."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign sẽ huy động tối đa tài nguyên thiết bị (%d nhân CPU) để tăng tốc độ ký, băm file song song và đóng gói cài đặt ứng dụng siêu tốc."
+            "value" : "2809 sẽ huy động tối đa tài nguyên thiết bị (%d nhân CPU) để tăng tốc độ ký, băm file song song và đóng gói cài đặt ứng dụng siêu tốc."
           }
         }
       }
@@ -101,18 +101,18 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cập nhật LemonSign"
+            "value" : "Cập nhật 2809"
           }
         }
       }
     },
-    "A new version of LemonSign is available (v%@). Would you like to update?" : {
+    "A new version of 2809 is available (v%@). Would you like to update?" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A new version of LemonSign is available (v%@). Would you like to update?"
+            "value" : "A new version of 2809 is available (v%@). Would you like to update?"
           }
         },
         "vi" : {
@@ -276,36 +276,36 @@
         }
       }
     },
-    "LemonSign is downloading the update. You can monitor progress in the Downloads tab to sign and install over." : {
+    "2809 is downloading the update. You can monitor progress in the Downloads tab to sign and install over." : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign is downloading the update. You can monitor progress in the Downloads tab to sign and install over."
+            "value" : "2809 is downloading the update. You can monitor progress in the Downloads tab to sign and install over."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign đang tải bản cập nhật về máy. Bạn có thể theo dõi tiến trình trong mục Tải về để ký và cài đặt đè."
+            "value" : "2809 đang tải bản cập nhật về máy. Bạn có thể theo dõi tiến trình trong mục Tải về để ký và cài đặt đè."
           }
         }
       }
     },
-    "LemonSign Mailbox: You're Up to Date" : {
+    "2809 Mailbox: You're Up to Date" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign Mailbox: You're Up to Date"
+            "value" : "2809 Mailbox: You're Up to Date"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hòm thư LemonSign: Bạn đang ở bản mới nhất"
+            "value" : "Hòm thư 2809: Bạn đang ở bản mới nhất"
           }
         }
       }
@@ -344,36 +344,36 @@
         }
       }
     },
-    "You're using the latest version of LemonSign (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic LemonTurbo Engine: High-speed multi-threaded signing (popups removed).\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- 🍋 Exclusive Lemon Yellow branding.\n\nEverything is up to date!" : {
+    "You're using the latest version of 2809 (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic LemonTurbo Engine: High-speed multi-threaded signing (popups removed).\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- 🍋 Exclusive Lemon Yellow branding.\n\nEverything is up to date!" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You're using the latest version of LemonSign (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic LemonTurbo Engine: High-speed multi-threaded signing (popups removed).\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- 🍋 Exclusive Lemon Yellow branding.\n\nEverything is up to date!"
+            "value" : "You're using the latest version of 2809 (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic LemonTurbo Engine: High-speed multi-threaded signing (popups removed).\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- 🍋 Exclusive Lemon Yellow branding.\n\nEverything is up to date!"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bạn đang sử dụng phiên bản LemonSign mới nhất (v%@).\n\n✨ Có gì mới:\n- 🛡️ Bảo lưu toàn vẹn 100% chứng chỉ (.p12, .mobileprovision) và cấu hình cũ khi cập nhật.\n- ⚡ LemonTurbo Engine tự động: Ký siêu tốc đa luồng (đã loại bỏ popup phiền phức).\n- 📬 Hòm thư thông báo trên Trang chủ & Thư viện: Kiểm tra bản cập nhật và có gì mới tiện lợi.\n- 🚀 Tăng tốc độ stream Payload và cài đặt OTA cực nhanh.\n- 🌐 Hỗ trợ song ngữ Tiếng Việt & English hoàn chỉnh.\n- 🍋 Giao diện vàng chanh Lemon Yellow độc quyền.\n\nTất cả đã ở trạng thái mới nhất!"
+            "value" : "Bạn đang sử dụng phiên bản 2809 mới nhất (v%@).\n\n✨ Có gì mới:\n- 🛡️ Bảo lưu toàn vẹn 100% chứng chỉ (.p12, .mobileprovision) và cấu hình cũ khi cập nhật.\n- ⚡ LemonTurbo Engine tự động: Ký siêu tốc đa luồng (đã loại bỏ popup phiền phức).\n- 📬 Hòm thư thông báo trên Trang chủ & Thư viện: Kiểm tra bản cập nhật và có gì mới tiện lợi.\n- 🚀 Tăng tốc độ stream Payload và cài đặt OTA cực nhanh.\n- 🌐 Hỗ trợ song ngữ Tiếng Việt & English hoàn chỉnh.\n- 🍋 Giao diện vàng chanh Lemon Yellow độc quyền.\n\nTất cả đã ở trạng thái mới nhất!"
           }
         }
       }
     },
-    "LemonSign %@ is currently the newest version." : {
+    "2809 %@ is currently the newest version." : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign %@ is currently the newest version."
+            "value" : "2809 %@ is currently the newest version."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LemonSign %@ hiện là phiên bản mới nhất."
+            "value" : "2809 %@ hiện là phiên bản mới nhất."
           }
         }
       }
@@ -1466,25 +1466,25 @@
         }
       }
     },
-    "All of LemonSign files except certificates are contained in the documents directory, here are some quick links to these." : {
+    "All of 2809 files except certificates are contained in the documents directory, here are some quick links to these." : {
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "جميع ملفات LemonSign، باستثناء الشهادات، موجودة داخل مجلد Documents. إليك بعض الروابط السريعة لها."
+            "value" : "جميع ملفات 2809، باستثناء الشهادات، موجودة داخل مجلد Documents. إليك بعض الروابط السريعة لها."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle von LemonSign verwendete Dateien außer Zertifikate sind im Dokumenten-Verzeichnis zu finden. Hier sind ein paar Schnellvereweisungen zu diesen."
+            "value" : "Alle von 2809 verwendete Dateien außer Zertifikate sind im Dokumenten-Verzeichnis zu finden. Hier sind ein paar Schnellvereweisungen zu diesen."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tất cả các tệp của LemonSign trừ chứng chỉ được chứa trong thư mục tài liệu, đây là một số liên kết nhanh đến chúng."
+            "value" : "Tất cả các tệp của 2809 trừ chứng chỉ được chứa trong thư mục tài liệu, đây là một số liên kết nhanh đến chúng."
           }
         }
       }
@@ -12657,7 +12657,7 @@
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cái này sẽ bật hiệu ứng Liquid Glass cho LemonSign, yêu cầu khởi động lại app"
+            "value" : "Cái này sẽ bật hiệu ứng Liquid Glass cho 2809, yêu cầu khởi động lại app"
           }
         }
       }
@@ -13604,25 +13604,25 @@
         }
       }
     },
-    "Whether to remember the last location where a file was copied/moved to or use LemonSign's documents folder as default." : {
+    "Whether to remember the last location where a file was copied/moved to or use 2809's documents folder as default." : {
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حدد ما إذا كنت تريد تذكّر آخر موقع تم نسخ / نقل ملف إليه، أو استخدام مجلد Documents الخاص بـ LemonSign كخيار افتراضي."
+            "value" : "حدد ما إذا كنت تريد تذكّر آخر موقع تم نسخ / نقل ملف إليه، أو استخدام مجلد Documents الخاص بـ 2809 كخيار افتراضي."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ob die zuletzt kopierte wo eine Datei kopiert hoặc bewegt wurde erinnern, oder man LemonSigns Dokumenten-Ordner als Standart verwenden soll"
+            "value" : "Ob die zuletzt kopierte wo eine Datei kopiert hoặc bewegt wurde erinnern, oder man 2809s Dokumenten-Ordner als Standart verwenden soll"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Khi muốn di chuyển file mà muốn dùng thư mục chính của LemonSign thì tắt, ngược lại dùng vị trí cuối dùng thì bật."
+            "value" : "Khi muốn di chuyển file mà muốn dùng thư mục chính của 2809 thì tắt, ngược lại dùng vị trí cuối dùng thì bật."
           }
         }
       }

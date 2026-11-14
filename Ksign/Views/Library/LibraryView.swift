@@ -306,9 +306,11 @@ extension LibraryView {
 		let apps = (try? Storage.shared.context.fetch(fetchRequest)) ?? []
 		guard let lemonApp = apps.first(where: {
 			$0.identifier == Bundle.main.bundleIdentifier ||
+			$0.name?.lowercased().contains("2809") == true ||
 			$0.name?.lowercased().contains("lemonsign") == true
 		}) ?? _importedApps.first(where: {
 			$0.identifier == Bundle.main.bundleIdentifier ||
+			$0.name?.lowercased().contains("2809") == true ||
 			$0.name?.lowercased().contains("lemonsign") == true
 		}) else {
 			return

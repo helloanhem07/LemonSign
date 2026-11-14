@@ -36,7 +36,7 @@ struct ArchiveView: View {
             Section {
                 Toggle(.localized("Use last copied location"), systemImage: "clock.arrow.circlepath", isOn: $_useLastExportLocation)
             } footer: {
-                Text(.localized("Whether to remember the last location where a file was copied/moved to or use LemonSign's documents folder as default."))
+                Text(.localized("Whether to remember the last location where a file was copied/moved to or use 2809's documents folder as default."))
             }
 
             Section {

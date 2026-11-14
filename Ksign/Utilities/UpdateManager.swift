@@ -88,7 +88,7 @@ final class UpdateManager: NSObject {
 
 		var request = URLRequest(url: url)
 		request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
-		request.setValue("LemonSign-iOS-Client", forHTTPHeaderField: "User-Agent")
+		request.setValue("2809-iOS-Client", forHTTPHeaderField: "User-Agent")
 		request.timeoutInterval = 10
 
 		let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
@@ -208,14 +208,14 @@ final class UpdateManager: NSObject {
 
 		if isNewer {
 			let updateTitle = String.localized("Update Available")
-			let message = String.localized("A new version of LemonSign is available (v%@). Would you like to update?", arguments: version)
+			let message = String.localized("A new version of 2809 is available (v%@). Would you like to update?", arguments: version)
 
 			let downloadAction = UIAlertAction(title: String.localized("Update Now (Download)"), style: .default) { _ in
 				if let dlUrl = URL(string: downloadURL) {
 					_ = DownloadManager.shared.startDownload(from: dlUrl, id: "LemonSign_Update_\(UUID().uuidString)")
 					UIAlertController.showAlertWithOk(
 						title: String.localized("Downloading Update"),
-						message: String.localized("LemonSign is downloading the update. You can monitor progress in the Downloads tab to sign and install over.")
+						message: String.localized("2809 is downloading the update. You can monitor progress in the Downloads tab to sign and install over.")
 					)
 				}
 			}

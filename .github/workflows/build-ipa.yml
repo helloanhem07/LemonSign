@@ -1,5 +1,4 @@
-
-name: Build LemonSign IPA
+name: Build 2809 IPA
 
 on:
   push:
@@ -30,12 +29,12 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Decrypt Protected Core
+      - name: Decrypt Protected Core (if encrypted)
         env:
           CORE_KEY: ${{ secrets.LEMON_CORE_KEY }}
         run: |
           if [ -f lemon_core.enc ]; then
-            echo "🔐 Decrypting LemonSign core engine using AES-256..."
+            echo "🔐 Decrypting protected core engine using AES-256..."
             openssl enc -d -aes-256-cbc -salt -pbkdf2 -iter 100000 \
               -in lemon_core.enc \
               -out lemon_core.tar.gz \
@@ -44,7 +43,7 @@ jobs:
             rm -f lemon_core.tar.gz
             echo "✅ Core engine decrypted and restored successfully."
           else
-            echo "ℹ️ No encrypted core found, proceeding with repository sources."
+            echo "ℹ️ Source tree ready, proceeding with build."
           fi
 
       - name: Build IPA
@@ -53,7 +52,7 @@ jobs:
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: LemonSign-IPA
-          path: packages/LemonSign.ipa
+          name: 2809-IPA
+          path: packages/2809.ipa
           if-no-files-found: error
           retention-days: 14

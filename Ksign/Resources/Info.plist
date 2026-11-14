@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>LemonSign</string>
+	<string>2809</string>
 	<key>CFBundleDisplayName</key>
-	<string>LemonSign</string>
+	<string>2809</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).userTask.*</string>
@@ -44,7 +44,7 @@
 			<key>CFBundleTypeIconFile</key>
 			<string>ksign_extension</string>
 			<key>CFBundleTypeName</key>
-			<string>LemonSign Certificate Package</string>
+			<string>2809 Certificate Package</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -187,9 +187,11 @@
 			<key>CFBundleURLIconFile</key>
 			<string>ksign_extension</string>
 			<key>CFBundleURLName</key>
-			<string>com.kasumidta.lemonsign</string>
+			<string>com.kasumidta.2809</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>sign2809</string>
+				<string>2809</string>
 				<string>lemonsign</string>
 				<string>ksign</string>
 			</array>
@@ -274,7 +276,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>LemonSign Certificate Package</string>
+			<string>2809 Certificate Package</string>
 			<key>UTTypeIconFile</key>
 			<string>ksign_extension</string>
 			<key>UTTypeIcons</key>
