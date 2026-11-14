@@ -76,17 +76,72 @@ struct SourceAppsView: View {
                 )
                 .ignoresSafeArea()
             } else {
-                if #available(iOS 17, *) {
+                if viewModel.isFetching {
+                    VStack(spacing: 16) {
+                        ProgressView(value: viewModel.totalSourcesCount > 0 ? min(1.0, Double(viewModel.loadedSourcesCount) / Double(max(1, viewModel.totalSourcesCount))) : nil)
+                            .progressViewStyle(LinearProgressViewStyle(tint: Color.accentColor))
+                            .frame(width: 240)
+                        
+                        VStack(spacing: 6) {
+                            Text("Đang tải dữ liệu kho ứng dụng...")
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            if viewModel.totalSourcesCount > 0 {
+                                Text("\(viewModel.loadedSourcesCount) / \(viewModel.totalSourcesCount) kho nguồn")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            if !viewModel.currentLoadingSourceName.isEmpty {
+                                Text(viewModel.currentLoadingSourceName)
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                                    .lineLimit(1)
+                            }
+                        }
+                    }
+                    .padding(24)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .shadow(color: .black.opacity(0.12), radius: 10, x: 0, y: 5)
+                } else if #available(iOS 17, *) {
                     ContentUnavailableView {
-                        ProgressView()
-                        Label(.localized("Fetching..."), systemImage: "")
+                        Label(.localized("No Apps Available"), systemImage: "square.stack.3d.up.slash")
                     } description: {
                         Text(.localized("Stuck? Check if you have any sources added."))
                     }
+                } else {
+                    ProgressView()
                 }
-                else { ProgressView() }
             }
         }
+        .overlay(alignment: .top) {
+            if viewModel.isFetching && viewModel.totalSourcesCount > 0 && viewModel.loadedSourcesCount < viewModel.totalSourcesCount {
+                VStack(spacing: 0) {
+                    ProgressView(value: Double(viewModel.loadedSourcesCount), total: Double(max(1, viewModel.totalSourcesCount)))
+                        .progressViewStyle(LinearProgressViewStyle(tint: Color.accentColor))
+                        .frame(height: 3)
+                    
+                    HStack(spacing: 8) {
+                        ProgressView()
+                            .scaleEffect(0.65)
+                        Text("Đang tải thêm kho IPA...")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text("\(viewModel.loadedSourcesCount)/\(viewModel.totalSourcesCount)")
+                            .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                            .foregroundColor(.secondary)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 4)
+                    .background(.ultraThinMaterial)
+                }
+                .transition(.move(edge: .top).combined(with: .opacity))
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: viewModel.isFetching)
         .navigationTitle(_navigationTitle)
         .searchable(text: $_searchText, placement: .platform())
         .toolbarTitleMenu {
@@ -153,6 +208,9 @@ struct SourceAppsView: View {
             _sortOption = SortOption(rawValue: _sortOptionRawValue) ?? .default
         }
         .onChange(of: viewModel.isFinished) { _ in
+            _load()
+        }
+        .onChange(of: viewModel.loadedSourcesCount) { _ in
             _load()
         }
         .onChange(of: _sortOption) { newValue in

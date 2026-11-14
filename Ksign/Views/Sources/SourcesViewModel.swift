@@ -3,7 +3,7 @@
 //  MSign
 //
 //  Created by samara on 30.04.2025.
-//  Updated for MSign with Cron Health-Check on 14.11.2026.
+//  Updated for MSign with Cron Health-Check & Live Loading Progress on 14.11.2026.
 //
 
 import Foundation
@@ -23,6 +23,12 @@ final class SourcesViewModel: ObservableObject {
 	var isFinished = true
 	@Published var sources: [AltSource: ASRepository] = [:]
 	@Published var failedSourceURLs: Set<String> = []
+	
+	// Live loading progress tracking
+	@Published var isFetching: Bool = false
+	@Published var loadedSourcesCount: Int = 0
+	@Published var totalSourcesCount: Int = 0
+	@Published var currentLoadingSourceName: String = ""
 	
 	init() {
 		_startCronHealthCheck()
@@ -78,13 +84,25 @@ final class SourcesViewModel: ObservableObject {
 		
 		// isfinished is used to prevent multiple fetches at the same time
 		isFinished = false
-		defer { isFinished = true }
-		
-		await MainActor.run {
-			self.sources = [:]
+		defer { 
+			isFinished = true 
+			Task { @MainActor in
+				self.isFetching = false
+				self.currentLoadingSourceName = ""
+			}
 		}
 		
 		let sourcesArray = Array(sources)
+		
+		await MainActor.run {
+			self.isFetching = true
+			self.totalSourcesCount = sourcesArray.count
+			self.loadedSourcesCount = 0
+			self.currentLoadingSourceName = ""
+			if refresh {
+				self.sources = [:]
+			}
+		}
 		
 		for startIndex in stride(from: 0, to: sourcesArray.count, by: batchSize) {
 			let endIndex = min(startIndex + batchSize, sourcesArray.count)
@@ -113,15 +131,20 @@ final class SourcesViewModel: ObservableObject {
 				var results = [AltSource: ASRepository]()
 				for await (source, repo, isFailed) in group {
 					let urlStr = source.sourceURL?.absoluteString ?? ""
-					if isFailed || repo == nil {
-						Task { @MainActor in
-							self.failedSourceURLs.insert(urlStr)
+					let sourceName = source.name ?? ""
+					Task { @MainActor in
+						self.loadedSourcesCount += 1
+						if !sourceName.isEmpty {
+							self.currentLoadingSourceName = sourceName
 						}
-					} else if let repo {
-						results[source] = repo
-						Task { @MainActor in
+						if isFailed || repo == nil {
+							self.failedSourceURLs.insert(urlStr)
+						} else if let repo {
 							self.failedSourceURLs.remove(urlStr)
 						}
+					}
+					if let repo {
+						results[source] = repo
 					}
 				}
 				return results
