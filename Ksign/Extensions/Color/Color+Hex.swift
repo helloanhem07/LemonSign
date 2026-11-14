@@ -21,7 +21,7 @@ extension Color {
         case 8: // ARGB (32-bit)
             (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
         default:
-            (a, r, g, b) = (255, 0xFF, 0xD6, 0x0A) // Default to Lemon Yellow
+            (a, r, g, b) = (255, 0x0A, 0x84, 0xFF) // Default to MSign Royal Blue
         }
 
         self.init(

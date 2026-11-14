@@ -1,23 +1,22 @@
 //
 //  UpdateManager.swift
-//  LemonSign
+//  MSign
 //
-//  Created by Kasumi on 22.10.2026.
+//  Created by samara on 2026.
+//  Updated for MSign on 14.11.2026.
 //
 
 import UIKit
-import Foundation
 
 final class UpdateManager: NSObject {
 	static let shared = UpdateManager()
 
-	// Current app constants for this build
-	static let currentAppVersion = "5.2.7"
-	static let currentAppBuild = 528
-	static let currentAppTag = "v5.2.7"
+	static let currentAppVersion = "1.0"
+	static let currentAppBuild = 1
+	static let currentAppTag = "v1.0"
 
-	private let _repoJsonUrl = "https://raw.githubusercontent.com/Kasumi-dta/LemonSign/refs/heads/main/repo.json"
-	private let _releasesApiUrl = "https://api.github.com/repos/Kasumi-dta/LemonSign/releases?per_page=5"
+	private let _repoJsonUrl = "https://raw.githubusercontent.com/helloanhem07/LemonSign/refs/heads/main/repo.json"
+	private let _releasesApiUrl = "https://api.github.com/repos/helloanhem07/LemonSign/releases?per_page=5"
 	private var _isChecking = false
 
 	private override init() {
@@ -50,15 +49,15 @@ final class UpdateManager: NSObject {
 			if let data = data,
 			   let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
 			   let apps = json["apps"] as? [[String: Any]],
-			   let lemonApp = apps.first(where: {
-				   ($0["bundleIdentifier"] as? String)?.contains("lemonsign") == true ||
-				   ($0["name"] as? String)?.contains("LemonSign") == true
+			   let msignApp = apps.first(where: {
+				   ($0["bundleIdentifier"] as? String)?.contains("msign") == true ||
+				   ($0["name"] as? String)?.contains("MSign") == true
 			   }) {
-				let remoteVersion = lemonApp["version"] as? String ?? "2.0"
-				let remoteBuildStr = (lemonApp["buildVersion"] as? String) ?? "\(lemonApp["buildVersion"] as? Int ?? 14)"
-				let remoteBuild = Int(remoteBuildStr) ?? 14
-				let downloadURL = lemonApp["downloadURL"] as? String ?? "https://github.com/Kasumi-dta/LemonSign/releases/download/v2.0/LemonSign.ipa"
-				let desc = lemonApp["localizedDescription"] as? String ?? ""
+				let remoteVersion = msignApp["version"] as? String ?? "1.0"
+				let remoteBuildStr = (msignApp["buildVersion"] as? String) ?? "\(msignApp["buildVersion"] as? Int ?? 1)"
+				let remoteBuild = Int(remoteBuildStr) ?? 1
+				let downloadURL = msignApp["downloadURL"] as? String ?? "https://github.com/helloanhem07/LemonSign/releases/download/v1.0/MSign.ipa"
+				let desc = msignApp["localizedDescription"] as? String ?? ""
 
 				DispatchQueue.main.async {
 					self?._isChecking = false
@@ -66,29 +65,30 @@ final class UpdateManager: NSObject {
 						version: remoteVersion,
 						build: remoteBuild,
 						tag: "v\(remoteVersion)",
-						name: "LemonSign v\(remoteVersion)",
+						name: "MSign v\(remoteVersion)",
 						body: desc,
 						downloadURL: downloadURL,
 						isManualCheck: isManualCheck
 					)
 				}
 			} else {
-				// Fallback to GitHub releases API
-				self?._checkGitHubReleasesFallback(isManualCheck: isManualCheck)
+				// Fallback to GitHub Releases API
+				self?._checkGitHubReleases(isManualCheck: isManualCheck)
 			}
 		}
 		task.resume()
 	}
 
-	private func _checkGitHubReleasesFallback(isManualCheck: Bool) {
+	private func _checkGitHubReleases(isManualCheck: Bool) {
 		guard let url = URL(string: _releasesApiUrl) else {
 			_isChecking = false
 			return
 		}
 
 		var request = URLRequest(url: url)
+		request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
 		request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
-		request.setValue("2809-iOS-Client", forHTTPHeaderField: "User-Agent")
+		request.setValue("MSign-iOS-Client", forHTTPHeaderField: "User-Agent")
 		request.timeoutInterval = 10
 
 		let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
@@ -102,7 +102,6 @@ final class UpdateManager: NSObject {
 				let releaseName = firstRelease["name"] as? String ?? tagName
 				let body = firstRelease["body"] as? String ?? ""
 
-				// Extract semantic version if embedded in release name (e.g. "LemonSign Beta 3 (v1.6.3.1)")
 				var parsedVersion = ""
 				if let regex = try? NSRegularExpression(pattern: #"v?([0-9]+\.[0-9]+(?:\.[0-9]+)*)"#) {
 					let searchString = "\(releaseName) \(tagName)"
@@ -115,7 +114,7 @@ final class UpdateManager: NSObject {
 					parsedVersion = tagName
 				}
 
-				var downloadURLString = "https://github.com/Kasumi-dta/LemonSign/releases/download/\(tagName)/LemonSign.ipa"
+				var downloadURLString = "https://github.com/helloanhem07/LemonSign/releases/download/\(tagName)/MSign.ipa"
 				if let assets = firstRelease["assets"] as? [[String: Any]] {
 					for asset in assets {
 						if let name = asset["name"] as? String, name.hasSuffix(".ipa"),
@@ -129,7 +128,7 @@ final class UpdateManager: NSObject {
 				DispatchQueue.main.async {
 					self?._processRelease(
 						version: parsedVersion,
-						build: 0,
+						build: 1,
 						tag: tagName,
 						name: releaseName,
 						body: body,
@@ -140,8 +139,8 @@ final class UpdateManager: NSObject {
 			} else if isManualCheck {
 				DispatchQueue.main.async {
 					UIAlertController.showAlertWithOk(
-						title: .localized("Check for Updates"),
-						message: .localized("Unable to check for updates. Please try again later.")
+						title: String.localized("Error"),
+						message: String.localized("Failed to check for updates.")
 					)
 				}
 			}
@@ -150,45 +149,34 @@ final class UpdateManager: NSObject {
 	}
 
 	private func _isRemoteNewer(remoteVersion: String, remoteBuild: Int, remoteTag: String) -> Bool {
-		let currentVersionStr = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? Self.currentAppVersion
-		let currentBuildStr = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "\(Self.currentAppBuild)"
-		let currentBuild = Int(currentBuildStr) ?? Self.currentAppBuild
-
-		// 1. Semantic version comparison (e.g. 1.6.3.1 vs 1.6.3)
-		let cleanRemote = remoteVersion
-			.replacingOccurrences(of: "v", with: "", options: .caseInsensitive)
-			.replacingOccurrences(of: "beta", with: "", options: .caseInsensitive)
-			.trimmingCharacters(in: .whitespacesAndNewlines)
-		let cleanCurrent = currentVersionStr
-			.replacingOccurrences(of: "v", with: "", options: .caseInsensitive)
-			.replacingOccurrences(of: "beta", with: "", options: .caseInsensitive)
-			.trimmingCharacters(in: .whitespacesAndNewlines)
+		let cleanRemote = remoteVersion.trimmingCharacters(in: CharacterSet(charactersIn: "vV "))
+		let cleanCurrent = Self.currentAppVersion.trimmingCharacters(in: CharacterSet(charactersIn: "vV "))
 
 		let remoteParts = cleanRemote.split(separator: ".").compactMap { Int($0) }
 		let currentParts = cleanCurrent.split(separator: ".").compactMap { Int($0) }
 
-		let count = max(remoteParts.count, currentParts.count)
-		for i in 0..<count {
+		let maxCount = max(remoteParts.count, currentParts.count)
+		for i in 0..<maxCount {
 			let r = i < remoteParts.count ? remoteParts[i] : 0
 			let c = i < currentParts.count ? currentParts[i] : 0
 			if r > c { return true }
 			if r < c { return false }
 		}
 
-		// 2. Build number check (if semantic versions are equal)
-		if remoteBuild > 0 && currentBuild > 0 {
-			if remoteBuild > currentBuild { return true }
-			if remoteBuild < currentBuild { return false }
+		if remoteBuild > Self.currentAppBuild {
+			return true
 		}
 
-		// 3. Beta tag check (e.g. beta3 vs beta2)
-		let remoteLower = remoteTag.lowercased()
-		let currentLower = Self.currentAppTag.lowercased()
-		if remoteLower.contains("beta") && currentLower.contains("beta") {
-			let remoteBetaNum = Int(remoteLower.replacingOccurrences(of: "beta", with: "").trimmingCharacters(in: .letters)) ?? 0
-			let currentBetaNum = Int(currentLower.replacingOccurrences(of: "beta", with: "").trimmingCharacters(in: .letters)) ?? 0
-			if remoteBetaNum > currentBetaNum { return true }
-			if remoteBetaNum < currentBetaNum { return false }
+		let cleanTag = remoteTag.trimmingCharacters(in: CharacterSet(charactersIn: "vV "))
+		if cleanTag != cleanCurrent && !cleanTag.isEmpty {
+			let tagParts = cleanTag.split(separator: ".").compactMap { Int($0) }
+			let maxTagCount = max(tagParts.count, currentParts.count)
+			for i in 0..<maxTagCount {
+				let t = i < tagParts.count ? tagParts[i] : 0
+				let c = i < currentParts.count ? currentParts[i] : 0
+				if t > c { return true }
+				if t < c { return false }
+			}
 		}
 
 		return false
@@ -203,24 +191,23 @@ final class UpdateManager: NSObject {
 		downloadURL: String,
 		isManualCheck: Bool
 	) {
-		let currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? Self.currentAppVersion
 		let isNewer = _isRemoteNewer(remoteVersion: version, remoteBuild: build, remoteTag: tag)
 
 		if isNewer {
 			let updateTitle = String.localized("Update Available")
-			let message = String.localized("A new version of 2809 is available (v%@). Would you like to update?", arguments: version)
+			let message = "Đã có bản cập nhật mới cho MSign (v\(version)). Bạn có muốn cập nhật không?"
 
-			let downloadAction = UIAlertAction(title: String.localized("Update Now (Download)"), style: .default) { _ in
+			let downloadAction = UIAlertAction(title: "Cập nhật ngay", style: .default) { _ in
 				if let dlUrl = URL(string: downloadURL) {
-					_ = DownloadManager.shared.startDownload(from: dlUrl, id: "LemonSign_Update_\(UUID().uuidString)")
+					_ = DownloadManager.shared.startDownload(from: dlUrl, id: "MSign_Update_\(UUID().uuidString)")
 					UIAlertController.showAlertWithOk(
-						title: String.localized("Downloading Update"),
-						message: String.localized("2809 is downloading the update. You can monitor progress in the Downloads tab to sign and install over.")
+						title: "Đang tải bản cập nhật",
+						message: "MSign đang tải bản cập nhật về máy. Bạn có thể theo dõi tiến trình trong mục Tải về để ký và cài đặt đè."
 					)
 				}
 			}
 
-			let cancelAction = UIAlertAction(title: String.localized("Later"), style: .cancel, handler: nil)
+			let cancelAction = UIAlertAction(title: "Để sau", style: .cancel, handler: nil)
 
 			UIAlertController.showAlert(
 				title: updateTitle,
@@ -228,8 +215,8 @@ final class UpdateManager: NSObject {
 				actions: [downloadAction, cancelAction]
 			)
 		} else if isManualCheck {
-			let title = String.localized("Check for Updates")
-			let message = String.localized("This is the latest version.")
+			let title = "Kiểm tra cập nhật"
+			let message = "MSign đang ở phiên bản mới nhất."
 			UIAlertController.showAlertWithOk(
 				title: title,
 				message: message

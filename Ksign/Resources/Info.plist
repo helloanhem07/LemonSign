@@ -57,54 +57,6 @@
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
-		<key>CFBundleAlternateIcons</key>
-		<dict>
-			<key>lemon_pixel</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_pixel</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_cyber</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_cyber</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_stealth</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_stealth</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_vapor</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_vapor</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_ruby</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_ruby</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-		</dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
@@ -119,54 +71,6 @@
 	</dict>
 	<key>CFBundleIcons~ipad</key>
 	<dict>
-		<key>CFBundleAlternateIcons</key>
-		<dict>
-			<key>lemon_pixel</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_pixel</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_cyber</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_cyber</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_stealth</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_stealth</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_vapor</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_vapor</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>lemon_ruby</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>lemon_ruby</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-		</dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>

@@ -110,7 +110,7 @@ extension ServerInstaller {
 				],
 				[
 					"kind": "display-image",
-					"url": "https://raw.githubusercontent.com/Kasumi-dta/LemonSign/refs/heads/main/assets/logo.png",
+					"url": "https://raw.githubusercontent.com/helloanhem07/LemonSign/refs/heads/main/assets/logo.png",
 				],
 			],
 			"metadata": [

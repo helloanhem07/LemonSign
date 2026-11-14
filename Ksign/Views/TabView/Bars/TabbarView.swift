@@ -26,6 +26,9 @@ struct TabbarView: View {
 				selectedTab = target
 			}
 		}
+		.onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("msign.openSettings"))) { _ in
+			selectedTab = .settings
+		}
 		.onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("lemonsign.openSettings"))) { _ in
 			selectedTab = .settings
 		}

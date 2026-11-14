@@ -78,6 +78,9 @@ struct ExtendedTabbarView: View {
 			SourcesAddView()
 				.presentationDetents([.medium])
 		}
+		.onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("msign.openSettings"))) { _ in
+			_showSettings = true
+		}
 		.onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("lemonsign.openSettings"))) { _ in
 			_showSettings = true
 		}

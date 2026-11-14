@@ -21,19 +21,19 @@
     "" : {
       "shouldTranslate" : false
     },
-    "⚡ LemonTurbo Engine" : {
+    "⚡ MTurbo Engine" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "⚡ LemonTurbo Engine"
+            "value" : "⚡ MTurbo Engine"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "⚡ LemonTurbo Engine"
+            "value" : "⚡ MTurbo Engine"
           }
         }
       }
@@ -344,19 +344,19 @@
         }
       }
     },
-    "You're using the latest version of HyperSign (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic LemonTurbo Engine: High-speed multi-threaded signing (popups removed).\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- 🍋 Exclusive Lemon Yellow branding.\n\nEverything is up to date!" : {
+    "You're using the latest version of MSign (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic MTurbo Engine: High-speed multi-threaded signing.\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- ⚡ Exclusive MSign Royal Blue branding.\n\nEverything is up to date!" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You're using the latest version of HyperSign (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic LemonTurbo Engine: High-speed multi-threaded signing (popups removed).\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- 🍋 Exclusive Lemon Yellow branding.\n\nEverything is up to date!"
+            "value" : "You're using the latest version of MSign (v%@).\n\n✨ What's New:\n- 🛡️ 100% Certificate Preservation: Keeps all existing .p12 certificates and configurations.\n- ⚡ Automatic MTurbo Engine: High-speed multi-threaded signing.\n- 📬 Mailbox notification on Home screen for quick update checks.\n- 🚀 Accelerated payload streaming & instant OTA install.\n- 🌐 Complete multi-language support.\n- ⚡ Exclusive MSign Royal Blue branding.\n\nEverything is up to date!"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bạn đang sử dụng phiên bản HyperSign mới nhất (v%@).\n\n✨ Có gì mới:\n- 🛡️ Bảo lưu toàn vẹn 100% chứng chỉ (.p12, .mobileprovision) và cấu hình cũ khi cập nhật.\n- ⚡ LemonTurbo Engine tự động: Ký siêu tốc đa luồng (đã loại bỏ popup phiền phức).\n- 📬 Hòm thư thông báo trên Trang chủ & Thư viện: Kiểm tra bản cập nhật và có gì mới tiện lợi.\n- 🚀 Tăng tốc độ stream Payload và cài đặt OTA cực nhanh.\n- 🌐 Hỗ trợ song ngữ Tiếng Việt & English hoàn chỉnh.\n- 🍋 Giao diện vàng chanh Lemon Yellow độc quyền.\n\nTất cả đã ở trạng thái mới nhất!"
+            "value" : "Bạn đang sử dụng phiên bản MSign mới nhất (v%@).\n\n✨ Có gì mới:\n- 🛡️ Bảo lưu toàn vẹn 100% chứng chỉ (.p12, .mobileprovision) và cấu hình cũ khi cập nhật.\n- ⚡ MTurbo Engine tự động: Ký siêu tốc đa luồng.\n- 📬 Hòm thư thông báo trên Trang chủ & Thư viện: Kiểm tra bản cập nhật và có gì mới tiện lợi.\n- 🚀 Tăng tốc độ stream Payload và cài đặt OTA cực nhanh.\n- 🌐 Hỗ trợ song ngữ Tiếng Việt & English hoàn chỉnh.\n- ⚡ Giao diện MSign Royal Blue độc quyền.\n\nTất cả đã ở trạng thái mới nhất!"
           }
         }
       }

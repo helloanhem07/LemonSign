@@ -43,20 +43,12 @@ struct FeatherApp: App {
 							.ignoresSafeArea()
 						
 						VStack(spacing: 16) {
-							if let uiImage = UIImage(named: "msign_icon") ?? UIImage(named: "AppIcon") {
-								Image(uiImage: uiImage)
-									.resizable()
-									.scaledToFit()
-									.frame(width: 96, height: 96)
-									.clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-									.shadow(color: Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255).opacity(0.35), radius: 16, x: 0, y: 6)
-							} else {
-								Image(systemName: "signature")
-									.resizable()
-									.scaledToFit()
-									.frame(width: 80, height: 80)
-									.foregroundColor(Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255))
-							}
+							Image("msign_icon")
+								.resizable()
+								.scaledToFit()
+								.frame(width: 96, height: 96)
+								.clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+								.shadow(color: Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255).opacity(0.4), radius: 16, x: 0, y: 6)
 							
 							Text("MSign")
 								.font(.system(size: 26, weight: .bold, design: .rounded))
@@ -73,6 +65,10 @@ struct FeatherApp: App {
 			.onAppear {
 				accentColorManager.updateGlobalTintColor()
 				if logsManager.isCapturing { logsManager.startCapture() }
+				
+				if UIApplication.shared.supportsAlternateIcons, UIApplication.shared.alternateIconName != nil {
+					UIApplication.shared.setAlternateIconName(nil)
+				}
 				
 				// Splash screen: show for 0.4s then smoothly fade out
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
