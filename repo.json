@@ -3,22 +3,22 @@
     "identifier": "com.kasumidta.msign-repo",
     "subtitle": "Kho ứng dụng chính thức MSign",
     "description": "Kho ứng dụng chính thức cho MSign - Trình ký và cài đặt IPA siêu tốc.",
-    "iconURL": "https://raw.githubusercontent.com/helloanhem07/LemonSign/main/assets/logo.png",
-    "website": "https://github.com/helloanhem07/LemonSign",
+    "iconURL": "https://raw.githubusercontent.com/helloanhem07/MSign/main/assets/logo.png",
+    "website": "https://github.com/helloanhem07/MSign",
     "tintColor": "0A84FF",
     "apps": [
         {
             "name": "MSign",
             "bundleIdentifier": "com.kasumidta.msign",
             "developerName": "MSign Team",
-            "iconURL": "https://raw.githubusercontent.com/helloanhem07/LemonSign/main/assets/logo.png",
+            "iconURL": "https://raw.githubusercontent.com/helloanhem07/MSign/main/assets/logo.png",
             "localizedDescription": "MSign v1.1 - Trình ký ứng dụng và đóng gói IPA tức thì với giao diện tinh gọn Liquid Glass, động cơ đa luồng Zsign C++ và nhận diện ESign Royal Blue.",
             "subtitle": "Trình ký & Cài đặt IPA siêu tốc",
             "tintColor": "0A84FF",
             "category": "utilities",
             "versions": [
                 {
-                    "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.1/msign1.1.ipa",
+                    "downloadURL": "https://github.com/helloanhem07/MSign/releases/download/v1.1/msign1.1.ipa",
                     "size": 15500000,
                     "version": "1.1",
                     "buildVersion": "2",
@@ -32,7 +32,7 @@
             "buildVersion": "2",
             "versionDate": "2026-11-14T14:40:00+07:00",
             "size": 15500000,
-            "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.1/msign1.1.ipa"
+            "downloadURL": "https://github.com/helloanhem07/MSign/releases/download/v1.1/msign1.1.ipa"
         }
     ]
 }

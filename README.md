@@ -1,76 +1,52 @@
 <p align="center">
-  <img src="assets/logo.png" height="200" alt="LemonSign Logo">
+  <img src="assets/logo.png" height="180" alt="MSign Logo">
 </p>
 
-<h1 align="center">LemonSign</h1>
+<h1 align="center">MSign</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-DISCONTINUED%20%2F%20NG%E1%BB%AANG%20H%E1%BB%96%20TR%E1%BB%A2-red?style=for-the-badge" alt="Status: Discontinued">
-</p>
-
-> [!CAUTION]
-> ### ⚠️ DỰ ÁN ĐÃ CHÍNH THỨC NGỪNG HỖ TRỢ / PROJECT DISCONTINUED
-> **LemonSign hiện đã ngừng phát triển và ngừng hỗ trợ.**
-> Do các rào cản bảo mật từ iOS (thu hồi chứng chỉ Apple OCSP, lỗi xác minh tính toàn vẹn và các bất ổn định của máy chủ cài đặt OTA itms-services), dự án sẽ không tiếp tục phát hành hoặc sửa lỗi. Xin chân thành cảm ơn mọi người đã quan tâm và đồng hành trong suốt thời gian qua!
-
-<p align="center">
-  <a href="https://github.com/Kasumi-dta/LemonSign/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Kasumi-dta/LemonSign?style=for-the-badge&color=FFD60A&labelColor=23272d" alt="GitHub Release">
-  </a>
-  <a href="https://github.com/Kasumi-dta/LemonSign/releases">
-    <img src="https://img.shields.io/github/downloads/Kasumi-dta/LemonSign/total?style=for-the-badge&color=FFD60A&labelColor=23272d" alt="GitHub Downloads">
-  </a>
-  <a href="https://t.me/applep12vnn">
-    <img src="https://img.shields.io/badge/Telegram-Channel-FFD60A?style=for-the-badge&logo=telegram&logoColor=23272d&labelColor=23272d" alt="Telegram">
-  </a>
-  <a href="https://github.com/Kasumi-dta/LemonSign/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-GPL%20v3.0-FFD60A?style=for-the-badge&labelColor=23272d" alt="License">
-  </a>
+  <b>Trình ký ứng dụng & cài đặt IPA trực tiếp trên thiết bị iOS</b>
 </p>
 
 <p align="center">
-  An elegant, on-device iOS app signer and sideloading utility customized with signature <b>Lemon Yellow</b> theme.
+  <a href="https://github.com/helloanhem07/MSign/releases/latest">
+    <img src="https://img.shields.io/github/v/release/helloanhem07/MSign?style=for-the-badge&color=0A84FF&labelColor=1c1c1e" alt="Release">
+  </a>
+  <a href="https://github.com/helloanhem07/MSign/releases">
+    <img src="https://img.shields.io/github/downloads/helloanhem07/MSign/total?style=for-the-badge&color=0A84FF&labelColor=1c1c1e" alt="Downloads">
+  </a>
+  <a href="https://github.com/helloanhem07/MSign/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-GPL%20v3.0-0A84FF?style=for-the-badge&labelColor=1c1c1e" alt="License">
+  </a>
 </p>
 
 ---
 
-Yet another codesigning app, have you ever wondered what if Feather and Esign had a child?
+## Giới thiệu
 
-## Why?
-Since Esign is end of service so people been moving to other signing apps, but Esign was a really big part of the community, so with the help of Feather as the base app, I tried to recreate Esign as close as possible so you guys can easier to get familiar and less app switching for smooth sideloading.
+**MSign** là công cụ ký mã số và cài đặt tệp tin IPA trực tiếp trên iPhone/iPad không cần máy tính. Ứng dụng kết hợp hiệu năng vượt trội của nhân ký mã nguồn mở với ngôn ngữ thiết kế **Liquid Glass** hiện đại, mang phong cách nhận diện Electric Blue đặc trưng.
 
-LemonSign builds upon this foundation with a fresh modern interface, a signature lemon yellow identity, and complete offline signing capabilities.
+### Điểm nổi bật
+- ⚡ **Ký IPA siêu tốc on-device**: Tích hợp động cơ C++ `zsign` tối ưu hóa đa luồng, ký ứng dụng chỉ trong vài giây.
+- 🎨 **Giao diện Liquid Glass**: Phong cách kính mờ (.ultraThinMaterial), viền gradient dạ quang và hiệu ứng thị giác mượt mà trên iOS 16+.
+- 📦 **Tích hợp sẵn hơn 30 nguồn KhoIPA**: Đầy đủ các kho ứng dụng, game và tiện ích phổ biến, tự động kiểm tra trạng thái hoạt động của từng nguồn.
+- 📲 **Cài đặt linh hoạt**: Hỗ trợ phương thức cài đặt qua máy chủ nội bộ (Bán cục bộ & Cục bộ hoàn toàn) tương thích tốt từ iOS 16 đến iOS 18.
+- 💉 **Tùy biến & Chèn Tweak**: Hỗ trợ inject dylib, framework, thay đổi Bundle ID, chỉnh sửa Info.plist trực tiếp trước khi ký.
+- 🔐 **Quản lý chứng chỉ đơn giản**: Nhập và lưu trữ chứng chỉ `.p12` và `.mobileprovision`, theo dõi hạn sử dụng theo thời gian thực.
+- 🔄 **Cập nhật tự động**: Nhận thông báo và cập nhật phiên bản mới trực tiếp trong ứng dụng chỉ với 1 chạm.
 
-Another reason is this app was built to make sideloading simpler and more accessible, allowing everyone to easily sign, inject dylibs/tweaks, and manage certificates directly on iOS devices without needing a computer!
+---
 
-## Features
-- 🍋 **Lemon Yellow Theme**: Clean, modern interface designed with custom pixel art lemon branding.
-- ⚡ **LemonTurbo Multi-Core Engine**: Parallel multi-threaded hashing and codesigning utilizing 100% of the device's CPU cores for 3x - 5x faster signing.
-- 🔄 **In-App Auto-Updater**: Directly checks for remote releases on GitHub and downloads/updates with 1-click.
-- ✍️ **On-Device Signing**: Fast C++ `zsign` engine compiled directly into Swift for lightning-fast IPA signing.
-- 🛡️ **Live Jailbreak Detection**: Real-time status indicator recognizing Stock iOS vs Rootless/Rootful jailbreak.
-- 💉 **Tweak & Dylib Injection**: Inject modifications, frameworks, and tweaks into your IPAs seamlessly.
-- 📲 **Smart Localhost OTA Server**: Built-in server with automatic fallback and SSL certificate renewal prompt.
-- 📦 **Multi-Repo Sources & Built-in Tools**: Browse and download IPAs directly from AltStore and ESign sources, with built-in official **Dopamine Jailbreak** and community tools.
-- 🛠️ **Built-in File & Plist Editor**: Inspect app bundles, modify `Info.plist`, view hex, and unpack IPAs.
-- 🔌 **IDevice Tunnel Support**: Local device tunnel pairing for trusted installation flows.
+## Cài đặt
 
-## Help & Community
-You can create an Issue at [Issues](https://github.com/Kasumi-dta/LemonSign/issues). This is also the place for you to report bugs or request new features, so feel free to open one!
+Tải về bản dựng mới nhất tại mục [Releases](https://github.com/helloanhem07/MSign/releases/latest):
 
-You can also join our Telegram channel at [applep12vnn](https://t.me/applep12vnn) for updates, certificates, and community discussion.
+1. Tải tệp tin `msign1.1.ipa`.
+2. Cài đặt thông qua TrollStore, ESign, Scarlet, AltStore hoặc Sideloadly.
+3. Mở MSign, nhập chứng chỉ của bạn và bắt đầu ký ứng dụng.
 
-## Download
-- 🌟 **Latest Release**: [**LemonSign v2.0**](https://github.com/Kasumi-dta/LemonSign/releases/tag/v2.0)
-- 📦 **Direct IPA Download**: [**LemonSign.ipa (v2.0)**](https://github.com/Kasumi-dta/LemonSign/releases/download/v2.0/LemonSign.ipa)
-- 🚀 **All Releases & Betas**: [**GitHub Releases**](https://github.com/Kasumi-dta/LemonSign/releases)
+---
 
-## Special thanks
-- Feather by [claration](https://github.com/claration/Feather)
-- Ksign by [nyasami](https://github.com/nyasami)
-- Khoindvn for certificate sharing and community support
-- [Kasumi-dta](https://github.com/Kasumi-dta) for LemonSign customization & maintenance
-- And you! for using the app ❤️
+## Đóng góp & Giấy phép
 
-## Disclaimer
-This project is maintained here, on GitHub. Releases are distributed here, on GitHub. We do not currently have a project website outside of this repository. Please make sure to avoid any sites that host our software as they are often malicious and are there to mislead the user.
+Dự án được phân phối dưới giấy phép **GNU General Public License v3.0**. Mọi đóng góp, báo lỗi hoặc yêu cầu tính năng mới đều được hoan nghênh tại mục [Issues](https://github.com/helloanhem07/MSign/issues).

@@ -15,8 +15,8 @@ final class UpdateManager: NSObject {
 	static let currentAppBuild = 2
 	static let currentAppTag = "v1.1"
 
-	private let _repoJsonUrl = "https://raw.githubusercontent.com/helloanhem07/LemonSign/refs/heads/main/repo.json"
-	private let _releasesApiUrl = "https://api.github.com/repos/helloanhem07/LemonSign/releases?per_page=5"
+	private let _repoJsonUrl = "https://raw.githubusercontent.com/helloanhem07/MSign/refs/heads/main/repo.json"
+	private let _releasesApiUrl = "https://api.github.com/repos/helloanhem07/MSign/releases?per_page=5"
 	private var _isChecking = false
 
 	private override init() {
