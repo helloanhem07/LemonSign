@@ -1,0 +1,76 @@
+<p align="center">
+  <img src="assets/logo.png" height="200" alt="LemonSign Logo">
+</p>
+
+<h1 align="center">LemonSign</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-DISCONTINUED%20%2F%20NG%E1%BB%AANG%20H%E1%BB%96%20TR%E1%BB%A2-red?style=for-the-badge" alt="Status: Discontinued">
+</p>
+
+> [!CAUTION]
+> ### ⚠️ DỰ ÁN ĐÃ CHÍNH THỨC NGỪNG HỖ TRỢ / PROJECT DISCONTINUED
+> **LemonSign hiện đã ngừng phát triển và ngừng hỗ trợ.**
+> Do các rào cản bảo mật từ iOS (thu hồi chứng chỉ Apple OCSP, lỗi xác minh tính toàn vẹn và các bất ổn định của máy chủ cài đặt OTA itms-services), dự án sẽ không tiếp tục phát hành hoặc sửa lỗi. Xin chân thành cảm ơn mọi người đã quan tâm và đồng hành trong suốt thời gian qua!
+
+<p align="center">
+  <a href="https://github.com/Kasumi-dta/LemonSign/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Kasumi-dta/LemonSign?style=for-the-badge&color=FFD60A&labelColor=23272d" alt="GitHub Release">
+  </a>
+  <a href="https://github.com/Kasumi-dta/LemonSign/releases">
+    <img src="https://img.shields.io/github/downloads/Kasumi-dta/LemonSign/total?style=for-the-badge&color=FFD60A&labelColor=23272d" alt="GitHub Downloads">
+  </a>
+  <a href="https://t.me/applep12vnn">
+    <img src="https://img.shields.io/badge/Telegram-Channel-FFD60A?style=for-the-badge&logo=telegram&logoColor=23272d&labelColor=23272d" alt="Telegram">
+  </a>
+  <a href="https://github.com/Kasumi-dta/LemonSign/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-GPL%20v3.0-FFD60A?style=for-the-badge&labelColor=23272d" alt="License">
+  </a>
+</p>
+
+<p align="center">
+  An elegant, on-device iOS app signer and sideloading utility customized with signature <b>Lemon Yellow</b> theme.
+</p>
+
+---
+
+Yet another codesigning app, have you ever wondered what if Feather and Esign had a child?
+
+## Why?
+Since Esign is end of service so people been moving to other signing apps, but Esign was a really big part of the community, so with the help of Feather as the base app, I tried to recreate Esign as close as possible so you guys can easier to get familiar and less app switching for smooth sideloading.
+
+LemonSign builds upon this foundation with a fresh modern interface, a signature lemon yellow identity, and complete offline signing capabilities.
+
+Another reason is this app was built to make sideloading simpler and more accessible, allowing everyone to easily sign, inject dylibs/tweaks, and manage certificates directly on iOS devices without needing a computer!
+
+## Features
+- 🍋 **Lemon Yellow Theme**: Clean, modern interface designed with custom pixel art lemon branding.
+- ⚡ **LemonTurbo Multi-Core Engine**: Parallel multi-threaded hashing and codesigning utilizing 100% of the device's CPU cores for 3x - 5x faster signing.
+- 🔄 **In-App Auto-Updater**: Directly checks for remote releases on GitHub and downloads/updates with 1-click.
+- ✍️ **On-Device Signing**: Fast C++ `zsign` engine compiled directly into Swift for lightning-fast IPA signing.
+- 🛡️ **Live Jailbreak Detection**: Real-time status indicator recognizing Stock iOS vs Rootless/Rootful jailbreak.
+- 💉 **Tweak & Dylib Injection**: Inject modifications, frameworks, and tweaks into your IPAs seamlessly.
+- 📲 **Smart Localhost OTA Server**: Built-in server with automatic fallback and SSL certificate renewal prompt.
+- 📦 **Multi-Repo Sources & Built-in Tools**: Browse and download IPAs directly from AltStore and ESign sources, with built-in official **Dopamine Jailbreak** and community tools.
+- 🛠️ **Built-in File & Plist Editor**: Inspect app bundles, modify `Info.plist`, view hex, and unpack IPAs.
+- 🔌 **IDevice Tunnel Support**: Local device tunnel pairing for trusted installation flows.
+
+## Help & Community
+You can create an Issue at [Issues](https://github.com/Kasumi-dta/LemonSign/issues). This is also the place for you to report bugs or request new features, so feel free to open one!
+
+You can also join our Telegram channel at [applep12vnn](https://t.me/applep12vnn) for updates, certificates, and community discussion.
+
+## Download
+- 🌟 **Latest Release**: [**LemonSign v2.0**](https://github.com/Kasumi-dta/LemonSign/releases/tag/v2.0)
+- 📦 **Direct IPA Download**: [**LemonSign.ipa (v2.0)**](https://github.com/Kasumi-dta/LemonSign/releases/download/v2.0/LemonSign.ipa)
+- 🚀 **All Releases & Betas**: [**GitHub Releases**](https://github.com/Kasumi-dta/LemonSign/releases)
+
+## Special thanks
+- Feather by [claration](https://github.com/claration/Feather)
+- Ksign by [nyasami](https://github.com/nyasami)
+- Khoindvn for certificate sharing and community support
+- [Kasumi-dta](https://github.com/Kasumi-dta) for LemonSign customization & maintenance
+- And you! for using the app ❤️
+
+## Disclaimer
+This project is maintained here, on GitHub. Releases are distributed here, on GitHub. We do not currently have a project website outside of this repository. Please make sure to avoid any sites that host our software as they are often malicious and are there to mislead the user.

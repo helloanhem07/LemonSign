@@ -1,0 +1,59 @@
+
+name: Build LemonSign IPA
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: 'macOS Runner environment'
+        required: true
+        default: 'macos-latest'
+        type: choice
+        options:
+          - macos-latest
+          - macos-15
+          - macos-14
+          - macos-26-intel
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ${{ inputs.runner || 'macos-latest' }}
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Decrypt Protected Core
+        env:
+          CORE_KEY: ${{ secrets.LEMON_CORE_KEY }}
+        run: |
+          if [ -f lemon_core.enc ]; then
+            echo "🔐 Decrypting LemonSign core engine using AES-256..."
+            openssl enc -d -aes-256-cbc -salt -pbkdf2 -iter 100000 \
+              -in lemon_core.enc \
+              -out lemon_core.tar.gz \
+              -pass pass:"$CORE_KEY"
+            tar -xzf lemon_core.tar.gz
+            rm -f lemon_core.tar.gz
+            echo "✅ Core engine decrypted and restored successfully."
+          else
+            echo "ℹ️ No encrypted core found, proceeding with repository sources."
+          fi
+
+      - name: Build IPA
+        run: make
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: LemonSign-IPA
+          path: packages/LemonSign.ipa
+          if-no-files-found: error
+          retention-days: 14
