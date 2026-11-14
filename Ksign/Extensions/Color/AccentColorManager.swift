@@ -13,11 +13,11 @@ class AccentColorManager: ObservableObject {
     static let shared = AccentColorManager()
     
     var currentAccentColor: Color {
-        Color(red: 0xFF/255, green: 0xD6/255, blue: 0x0A/255)
+        Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255)
     }
     
     var currentUIColor: UIColor {
-        UIColor(red: 0xFF/255, green: 0xD6/255, blue: 0x0A/255, alpha: 1.0)
+        UIColor(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255, alpha: 1.0)
     }
     
     /// Updates the global app tint color

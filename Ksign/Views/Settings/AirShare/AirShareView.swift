@@ -50,7 +50,7 @@ struct AirShareView: View {
                         Text(shareURLString)
                             .font(.system(.headline, design: .monospaced))
                             .fontWeight(.bold)
-                            .foregroundColor(server.isRunning ? Color(hex: "FFD60A") : .secondary)
+                            .foregroundColor(server.isRunning ? Color(hex: "0A84FF") : .secondary)
                         
                         Text("Mở trình duyệt trên máy tính/thiết bị khác cùng mạng Wi-Fi hoặc quét mã QR để tải lên/xuống file IPA trực tiếp không cần dây cáp.")
                             .font(.caption)
@@ -84,7 +84,7 @@ struct AirShareView: View {
                         }
                     } icon: {
                         Image(systemName: server.isRunning ? "antenna.radiowaves.left.and.right" : "antenna.radiowaves.left.and.right.slash")
-                            .foregroundColor(server.isRunning ? Color(hex: "FFD60A") : .secondary)
+                            .foregroundColor(server.isRunning ? Color(hex: "0A84FF") : .secondary)
                     }
                 }
             }
@@ -95,7 +95,7 @@ struct AirShareView: View {
                 } label: {
                     HStack {
                         Label("Thử nghiệm trên Safari của máy", systemImage: "safari")
-                            .foregroundColor(Color(hex: "FFD60A"))
+                            .foregroundColor(Color(hex: "0A84FF"))
                             .fontWeight(.semibold)
                         Spacer()
                         Image(systemName: "arrow.up.right.square")

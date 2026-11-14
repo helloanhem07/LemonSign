@@ -1,137 +1,38 @@
 {
-    "name": "LemonSign Repo [ĐÃ NGỪNG HỖ TRỢ]",
-    "identifier": "com.kasumidta.lemonsign-repo",
-    "subtitle": "[DISCONTINUED] Nguồn LemonSign đã ngừng hỗ trợ",
-    "description": "[ĐÃ NGỪNG HỖ TRỢ] Nguồn AltStore & ESign cho LemonSign. Dự án đã dừng phát triển do giới hạn hệ thống iOS.",
-    "iconURL": "https://raw.githubusercontent.com/Kasumi-dta/LemonSign/main/assets/logo.png",
-    "website": "https://github.com/Kasumi-dta/LemonSign",
-    "tintColor": "FFD60A",
+    "name": "MSign Official Repo",
+    "identifier": "com.kasumidta.msign-repo",
+    "subtitle": "Kho ứng dụng chính thức MSign",
+    "description": "Kho ứng dụng chính thức cho MSign - Trình ký và cài đặt IPA siêu tốc.",
+    "iconURL": "https://raw.githubusercontent.com/helloanhem07/LemonSign/main/assets/logo.png",
+    "website": "https://github.com/helloanhem07/LemonSign",
+    "tintColor": "0A84FF",
     "apps": [
         {
-            "name": "LemonSign [ĐÃ NGỪNG HỖ TRỢ]",
-            "bundleIdentifier": "com.kasumidta.lemonsign",
-            "developerName": "Kasumi-dta",
-            "iconURL": "https://raw.githubusercontent.com/Kasumi-dta/LemonSign/main/assets/logo.png",
-            "localizedDescription": "[DỰ ÁN ĐÃ CHÍNH THỨC NGỪNG HỖ TRỢ / DISCONTINUED]\nLemonSign đã dừng phát triển và ngừng hỗ trợ toàn diện do các rào cản thu hồi chứng chỉ và lỗi hệ thống iOS. Xin chân thành cảm ơn bạn đã sử dụng và ủng hộ!",
-            "subtitle": "[ĐÃ NGỪNG HỖ TRỢ] Trình ký ứng dụng iOS Lemon Yellow.",
-            "tintColor": "FFD60A",
+            "name": "MSign",
+            "bundleIdentifier": "com.kasumidta.msign",
+            "developerName": "MSign Team",
+            "iconURL": "https://raw.githubusercontent.com/helloanhem07/LemonSign/main/assets/logo.png",
+            "localizedDescription": "MSign v1.0 - Trình ký ứng dụng và đóng gói IPA tức thì với giao diện tinh gọn, động cơ đa luồng Zsign C++ và nhận diện ESign Royal Blue.",
+            "subtitle": "Trình ký & Cài đặt IPA siêu tốc",
+            "tintColor": "0A84FF",
             "category": "utilities",
             "versions": [
                 {
-                    "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v5.2.7/LemonSign.ipa",
+                    "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.0/MSign.ipa",
                     "size": 15500000,
-                    "version": "5.2.7",
-                    "buildVersion": "528",
-                    "date": "2026-10-24T18:40:00+07:00",
-                    "localizedDescription": "Bản phát hành LemonSign v5.2.7 (Build 528):\n- 🚀 Giữ nguyên 100% Bundle ID gốc của ứng dụng khi ký: Xóa bỏ hoàn toàn cơ chế tự động ghi đè Bundle ID, đảm bảo ứng dụng mod/tweak (như AovCheat) hoạt động chuẩn xác.\n- 🔄 Khôi phục chuẩn danh mục cài đặt 'Cục bộ' (Local) và 'Bán cục bộ' (Semi Local):\n  + Cục bộ (LemonSign): Chạy HTTPS nội bộ trên thiết bị (localhost.backloop.dev).\n  + Bán cục bộ (ESign): Sử dụng máy chủ trung gian api.palera.in.\n- 🌐 Đồng bộ hiển thị tên miền hỗ trợ động: Tự động đổi giữa 'localhost.backloop.dev' và 'api.palera.in' theo đúng máy chủ được chọn.\n- 🛑 Khắc phục triệt để lỗi sập server khi đang cài đặt: Loại bỏ hoàn toàn cơ chế timeout ngắt server đột ngột, đảm bảo máy chủ luôn sẵn sàng phục vụ thiết bị kết nối.",
-                    "minOSVersion": "16.0"
-                },
-                {
-                    "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v5.2.6/LemonSign.ipa",
-                    "size": 15500000,
-                    "version": "5.2.6",
-                    "buildVersion": "527",
-                    "date": "2026-10-24T18:05:00+07:00",
-                    "localizedDescription": "Bản phát hành LemonSign v5.2.6 (Build 527):\n- 🛡️ Khắc phục triệt để lỗi 'Không thể cài đặt LemonSign': Bổ sung header Content-Length bắt buộc cho luồng tải OTA của iOS và chuẩn hóa mức nén Deflate BestSpeed (Level 1) tương thích 100% với trình giải nén BOMCopier của iOS.\n- 🔒 Luôn kích hoạt mã hóa TLS HTTPS nội bộ ngay cả ở chế độ Server ESign (Public Relay), ngăn chặn lỗi từ chối kết nối hoặc bị Apple ATS chặn.\n- ⚡ Tối ưu luồng đóng gói siêu tốc, an toàn và ổn định tuyệt đối.",
-                    "minOSVersion": "16.0"
-                },
-                {
-                    "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v5.2.5/LemonSign.ipa",
-                    "size": 15500000,
-                    "version": "5.2.5",
-                    "buildVersion": "526",
-                    "date": "2026-10-24T17:30:00+07:00",
-                    "localizedDescription": "Bản phát hành LemonSign v5.2.5 (Build 526):\n- 🌐 Tích hợp Máy chủ Cài đặt ESign (Public Relay api.palera.in) song song cùng Máy chủ Nội bộ LemonSign (localhost.backloop.dev).\n- 🔍 Bổ sung nút Kiểm tra Máy chủ (Server Check) độc lập cho cả LemonSign và ESign trong Cài đặt với phản hồi trạng thái thời gian thực.\n- ⚡ Chế độ Cài đặt Siêu tốc (Ultra-Fast Store Mode Level 0): Bỏ qua nén zip khi đóng gói cục bộ, cài đặt ứng dụng chỉ mất 2-3 giây tương đương ESign.\n- 💾 Bộ nhớ đệm lặp lại tức thì (Instant Repeat Install): Cài đặt lại ứng dụng đã ký ngay lập tức mà không cần đóng gói lại.",
-                    "minOSVersion": "16.0"
-                },
-                {
-                    "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v5.2.4/LemonSign.ipa",
-                    "size": 15500000,
-                    "version": "5.2.4",
-                    "buildVersion": "525",
-                    "date": "2026-10-24T08:20:00+07:00",
-                    "localizedDescription": "Bản phát hành LemonSign v5.2.4 (Build 525):\n- 🛡️ Khắc phục triệt để lỗi 'Không thể cài đặt' khi cập nhật từ trong app: Khôi phục toàn diện streaming headers (Accept-Ranges bytes, Content-Type octet-stream) cho máy chủ OTA nội bộ và truyền chính xác thực thể SignedApp mới nhất sang trình cài đặt.\n- 🚀 Giữ nguyên Bundle ID gốc của ứng dụng khi ký để đảm bảo cập nhật đè (in-place update) mượt mà không bị iOS chặn do sai lệch định danh.\n- 🎨 Sửa dứt điểm lỗi đổi biểu tượng ứng dụng (OSStatus -54).\n- 🧹 Xóa bỏ hoàn toàn phần cấu hình DNS chặn thu hồi.",
-                    "minOSVersion": "16.0"
-                },
-                {
-                    "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v2.1/LemonSign.ipa",
-                    "size": 15500000,
-                    "version": "2.1",
-                    "buildVersion": "15",
-                    "date": "2026-10-24T02:15:00+07:00",
-                    "localizedDescription": "Bản phát hành LemonSign v2.1:\n- ⚡ Tối ưu tốc độ cài đặt tức thì (Tip 2 & 3): Áp dụng chuẩn nén Store (mức 0) & 1MB buffer streaming giữ kết nối keep-alive, cài đặt nhanh và mượt tương đương ESign.\n- 🛡️ Chuyển sang KhoinDNS chuẩn (Cloudflare Gateway DoH): Chặn thu hồi chứng chỉ Apple OCSP/PPQ không lỗi, không sinh app/icon rác ngoài màn hình.\n- 🧹 Dọn dẹp giao diện: Loại bỏ nút 'Xong' thừa trên thanh tiêu đề Cài đặt.\n- 🔒 Chuẩn hóa hiển thị SSL Let's Encrypt nội bộ: Phân biệt rõ thời gian đồng bộ và hạn chứng chỉ.",
-                    "minOSVersion": "16.0"
-                },
-                {
-                    "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v2.0/LemonSign.ipa",
-                    "size": 15500000,
-                    "version": "2.0",
-                    "buildVersion": "14",
-                    "date": "2026-10-23T23:55:00+07:00",
-                    "localizedDescription": "Bản phát hành LemonSign v2.0:\n- ⚡ Sửa dứt điểm luồng Ký & Cài đặt: Tự động kích hoạt trạng thái gửi Payload, bổ sung nút 'Ký & Cài đặt ngay' trực tiếp.\n- 🔒 Sửa lỗi trạng thái SSL: Hiển thị chính xác 'Bản mới nhất (Đã xác minh)' khi chứng chỉ còn hạn và vừa cập nhật, hiển thị ngày giờ cập nhật chi tiết.\n- 📱 Tinh chỉnh Tabbar 5 mục chuẩn: Loại bỏ nút bánh răng thừa ở góc trên các tab, chuẩn hóa tiêu đề 'Tệp' (thay cho 'Documents').\n- 🛡️ Lá chắn Chống Thu hồi (Anti-Revoke Shield): Cài đặt hồ sơ DNS chặn Apple OCSP/PPQ bảo vệ chứng chỉ P12 / Enterprise.\n- 🧩 Kho Tweak & Dylib tích hợp (Tweak Hub): Tùy chọn tiêm Adblock Pro, Bypass Jailbreak, 120 FPS Unlocker khi ký IPA.\n- 🎨 Bộ sưu tập Đổi Icon App: 5 biểu tượng màn hình chính (Pixel Lemon, Cyber Dark, Glitch Neon, Retro Apple, Stealth) không âm thanh.\n- 📡 AirShare WiFi & Mã QR: Chia sẻ file IPA qua mạng nội bộ tốc độ cao không cần dây cáp.",
+                    "version": "1.0",
+                    "buildVersion": "1",
+                    "date": "2026-11-14T12:00:00+07:00",
+                    "localizedDescription": "Bản phát hành chính thức MSign v1.0 (Build 1):\n- ⚡ Nhận diện mới MSign phong cách ESign Royal Blue (#0A84FF).\n- 🚀 Splash Screen hiển thị logo 0.4s mượt mà.\n- ⚙️ Cài đặt tinh gọn chuẩn xác 5 khối chức năng.\n- 📦 Tích hợp sẵn hơn 30 nguồn KhoIPA với cơ chế Cron Health-Check tự động ẩn nguồn lỗi.\n- 🗑️ Thêm tính năng vuốt / menu xóa & sửa nguồn trực tiếp.",
                     "minOSVersion": "16.0"
                 }
             ],
             "appPermissions": {},
-            "version": "5.2.7",
-            "buildVersion": "528",
-            "versionDate": "2026-10-24T18:40:00+07:00",
+            "version": "1.0",
+            "buildVersion": "1",
+            "versionDate": "2026-11-14T12:00:00+07:00",
             "size": 15500000,
-            "downloadURL": "https://github.com/Kasumi-dta/LemonSign/releases/download/v5.2.7/LemonSign.ipa"
-        },
-        {
-            "name": "3105",
-            "bundleIdentifier": "com.apple.mobile.MobileHouseArrest",
-            "developerName": "YangJiii",
-            "iconURL": "https://raw.githubusercontent.com/Kasumi-dta/LemonSign/main/assets/3105.png",
-            "localizedDescription": "3105 là công cụ quản lý App Data, kho Patch (.3105), Theme bàn phím gọi điện (.3105pass), PosterBoard Wallpaper (.tendies) và trình dọn rác hệ thống dành cho iOS 17.0 - 18.7.1 của tác giả YangJiii.",
-            "subtitle": "Native App Data browser & Patch Manager (iOS 17 - 18)",
-            "tintColor": "FFD60A",
-            "category": "utilities",
-            "versions": [
-                {
-                    "downloadURL": "https://github.com/YangJiiii/3105/releases/download/v2.0/3105-2.0-build8-20260914-125906-unsigned.ipa",
-                    "size": 4604223,
-                    "version": "2.0",
-                    "buildVersion": "8",
-                    "date": "2026-09-14T12:59:00+07:00",
-                    "localizedDescription": "Bản phát hành 3105 v2.0 chính thức từ YangJiii:\n- Hỗ trợ kho marketplace cho patch, wallpaper, dialer themes.\n- Duyệt dữ liệu ứng dụng Application & App Group.\n- Tương thích iOS 17.0 - 17.7 và iOS 18.0 - 18.7.1.",
-                    "minOSVersion": "17.0"
-                }
-            ],
-            "appPermissions": {},
-            "version": "2.0",
-            "buildVersion": "8",
-            "versionDate": "2026-09-14T12:59:00+07:00",
-            "size": 4604223,
-            "downloadURL": "https://github.com/YangJiiii/3105/releases/download/v2.0/3105-2.0-build8-20260914-125906-unsigned.ipa"
-        },
-        {
-            "name": "Dopamine",
-            "bundleIdentifier": "com.opa334.Dopamine",
-            "developerName": "opa334",
-            "iconURL": "https://raw.githubusercontent.com/Kasumi-dta/LemonSign/main/assets/dopamine.png",
-            "localizedDescription": "Dopamine là công cụ Jailbreak Rootless chính thức của tác giả opa334 dành cho các thiết bị chạy iOS 15.0 đến 16.6.5 (hỗ trợ chip arm64e từ A12 đến A16/M1/M2). Tích hợp sẵn môi trường Procursus bootstrap và hệ thống ElleKit tweak injection tiên tiến, hoạt động ổn định và bảo mật cao.",
-            "subtitle": "Rootless Jailbreak cho iOS 15.0 - 16.6.5 (A12 - A16)",
-            "tintColor": "2B50ED",
-            "category": "utilities",
-            "versions": [
-                {
-                    "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.12/Dopamine.ipa",
-                    "size": 55420784,
-                    "version": "3.0.12",
-                    "buildVersion": "3012",
-                    "date": "2026-10-20T05:30:00+07:00",
-                    "localizedDescription": "Bản phát hành Dopamine 3.0.12 chính thức từ opa334:\n- Tối ưu hoá kernel exploit kfd và badRecovery.\n- Cập nhật Procursus bootstrap và ElleKit mới nhất.\n- Tương thích tốt nhất với iOS 15.0 - 16.6.5.",
-                    "minOSVersion": "15.0"
-                }
-            ],
-            "appPermissions": {},
-            "version": "3.0.12",
-            "buildVersion": "3012",
-            "versionDate": "2026-10-20T05:30:00+07:00",
-            "size": 55420784,
-            "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.12/Dopamine.ipa"
+            "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.0/MSign.ipa"
         }
     ]
 }

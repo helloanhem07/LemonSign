@@ -304,10 +304,10 @@ final class AirShareServer: ObservableObject {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>HyperSign AirShare</title>
+            <title>MSign AirShare</title>
             <style>
                 :root {
-                    --lemon: #FFD60A;
+                    --lemon: #0A84FF;
                     --bg: #121316;
                     --card: #1c1d22;
                     --text: #f5f5f7;
@@ -320,18 +320,18 @@ final class AirShareServer: ObservableObject {
                 .logo { font-size: 42px; margin-bottom: 6px; }
                 h1 { font-size: 26px; color: var(--lemon); font-weight: 800; }
                 p.sub { color: #8e8e93; font-size: 14px; margin-top: 4px; }
-                .badge { display: inline-block; background: rgba(255, 214, 10, 0.15); color: var(--lemon); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-top: 10px; border: 1px solid rgba(255, 214, 10, 0.3); }
+                .badge { display: inline-block; background: rgba(10, 132, 255, 0.15); color: var(--lemon); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-top: 10px; border: 1px solid rgba(10, 132, 255, 0.3); }
                 .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
                 .card-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
                 
                 /* Dropzone */
                 .dropzone { border: 2px dashed #444; border-radius: 12px; padding: 36px 20px; text-align: center; background: rgba(255, 255, 255, 0.02); cursor: pointer; transition: all 0.2s ease; }
-                .dropzone.hover { border-color: var(--lemon); background: rgba(255, 214, 10, 0.05); }
+                .dropzone.hover { border-color: var(--lemon); background: rgba(10, 132, 255, 0.05); }
                 .dropzone p { color: #aaa; font-size: 14px; margin-top: 8px; }
-                .btn { background: var(--lemon); color: #000; font-weight: 700; padding: 10px 20px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; display: inline-block; font-size: 14px; transition: transform 0.1s; }
+                .btn { background: var(--lemon); color: #fff; font-weight: 700; padding: 10px 20px; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; display: inline-block; font-size: 14px; transition: transform 0.1s; }
                 .btn:active { transform: scale(0.97); }
-                .btn-dl { background: rgba(255, 214, 10, 0.2); color: var(--lemon); padding: 6px 14px; font-size: 13px; }
-                .btn-dl:hover { background: var(--lemon); color: #000; }
+                .btn-dl { background: rgba(10, 132, 255, 0.2); color: var(--lemon); padding: 6px 14px; font-size: 13px; }
+                .btn-dl:hover { background: var(--lemon); color: #fff; }
                 
                 /* Progress */
                 #progressContainer { display: none; margin-top: 16px; }
@@ -350,7 +350,7 @@ final class AirShareServer: ObservableObject {
             <div class="container">
                 <header>
                     <div class="logo">🍋</div>
-                    <h1>HyperSign AirShare</h1>
+                    <h1>MSign AirShare</h1>
                     <p class="sub">Truyền tải và quản lý tệp IPA qua mạng Wi-Fi nội bộ</p>
                     <div class="badge">🟢 Mạng LAN Đang Hoạt Động</div>
                 </header>

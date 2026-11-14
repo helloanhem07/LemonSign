@@ -101,7 +101,12 @@ extension SourceAppsTableRepresentableView { class Coordinator: NSObject, UITabl
     weak var uiTableView: UITableView?
     
     private var _allAppsWithSource: [(source: ASRepository, app: ASRepository.App)] {
-        sources.flatMap { source in source.apps.map { (source: source, app: $0) } }
+        sources.flatMap { source in
+            source.apps.compactMap { app in
+                let hasDownload = app.downloadURL != nil || (app.versions?.contains(where: { $0.downloadURL != nil }) ?? false)
+                return hasDownload ? (source: source, app: app) : nil
+            }
+        }
     }
     
     private var _sortedApps: [(source: ASRepository, app: ASRepository.App)] {

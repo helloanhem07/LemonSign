@@ -1,4 +1,4 @@
-name: Build HyperSign IPA
+name: Build MSign IPA
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: HyperSign-IPA
-          path: packages/HyperSign.ipa
+          name: MSign-IPA
+          path: packages/MSign.ipa
           if-no-files-found: error
           retention-days: 14

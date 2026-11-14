@@ -204,7 +204,8 @@ enum FR {
 	
 	static func handleSource(
 		_ urlString: String,
-		competion: @escaping () -> Void
+		silent: Bool = false,
+		competion: @escaping () -> Void = {}
 	) {
 		guard let url = URL(string: urlString) else { return }
 		
@@ -218,13 +219,17 @@ enum FR {
 						competion()
 					}
 				} else {
-					DispatchQueue.main.async {
-						UIAlertController.showAlertWithOk(title: "Error", message: "Repository already added.")
+					if !silent {
+						DispatchQueue.main.async {
+							UIAlertController.showAlertWithOk(title: "Error", message: "Repository already added.")
+						}
 					}
 				}
 			case .failure(let error):
-				DispatchQueue.main.async {
-					UIAlertController.showAlertWithOk(title: "Error", message: error.localizedDescription)
+				if !silent {
+					DispatchQueue.main.async {
+						UIAlertController.showAlertWithOk(title: "Error", message: error.localizedDescription)
+					}
 				}
 			}
 		}

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>HyperSign</string>
+	<string>MSign</string>
 	<key>CFBundleDisplayName</key>
-	<string>HyperSign</string>
+	<string>MSign</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).userTask.*</string>
@@ -44,7 +44,7 @@
 			<key>CFBundleTypeIconFile</key>
 			<string>ksign_extension</string>
 			<key>CFBundleTypeName</key>
-			<string>HyperSign Certificate Package</string>
+			<string>MSign Certificate Package</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -187,9 +187,10 @@
 			<key>CFBundleURLIconFile</key>
 			<string>ksign_extension</string>
 			<key>CFBundleURLName</key>
-			<string>com.kasumidta.hypersign</string>
+			<string>com.kasumidta.msign</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>msign</string>
 				<string>hypersign</string>
 				<string>sign2809</string>
 				<string>HyperSign</string>
@@ -277,7 +278,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>HyperSign Certificate Package</string>
+			<string>MSign Certificate Package</string>
 			<key>UTTypeIconFile</key>
 			<string>ksign_extension</string>
 			<key>UTTypeIcons</key>

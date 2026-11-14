@@ -1,9 +1,9 @@
 //
 //  SettingsView.swift
-//  HyperSign
+//  MSign
 //
 //  Created by samara on 10.04.2025.
-//  Refactored for HyperSign on 14.11.2026.
+//  Refactored for MSign on 14.11.2026.
 //
 
 import SwiftUI
@@ -47,57 +47,11 @@ struct SettingsView: View {
 		return _certificates[_storedSelectedCert]
 	}
 	
-	private let _donationsUrl = "https://github.com/sponsors/Kasumi-dta"
-	
 	// MARK: Body
 	var body: some View {
 		NBNavigationView(.localized("Settings")) {
 			Form {
-				// Header Card
-				SettingsDonationCellView(site: _donationsUrl)
-				
-				// Giới thiệu
-				Section {
-					NavigationLink(destination: AboutNyaView()) {
-						HStack(spacing: 12) {
-							SettingsIconBadge(systemName: "info", color: .blue)
-							Text("Giới thiệu")
-								.foregroundColor(.primary)
-						}
-					}
-				}
-				
-				// Phân vùng Tinh Chỉnh Hệ Thống HyperGestalt
-				NBSection("Tinh Chỉnh Hệ Thống") {
-					NavigationLink(destination: HyperGestaltView()) {
-						HStack(spacing: 12) {
-							SettingsIconBadge(systemName: "rocket.fill", color: .red)
-							VStack(alignment: .leading, spacing: 2) {
-								Text("HyperGestalt Tweaks")
-									.foregroundColor(.primary)
-									.font(.body)
-								Text("Dynamic Island, Pin 80%, Tắt âm cam...")
-									.font(.caption2)
-									.foregroundColor(.secondary)
-							}
-						}
-					}
-				} footer: {
-					Text("Can thiệp cờ MobileGestalt mở khóa tính năng phần cứng đời mới và gỡ giới hạn khu vực.")
-				}
-				
-				// Giao diện
-				Section {
-					NavigationLink(destination: AppearanceView()) {
-						HStack(spacing: 12) {
-							SettingsIconBadge(systemName: "paintbrush.fill", color: .purple)
-							Text(.localized("Appearance"))
-								.foregroundColor(.primary)
-						}
-					}
-				}
-				
-				// Chứng chỉ
+				// 1. Chứng chỉ
 				NBSection(.localized("Certificates")) {
 					NavigationLink(destination: CertificatesView()) {
 						HStack(spacing: 12) {
@@ -119,10 +73,10 @@ struct SettingsView: View {
 							.foregroundColor(.disabled())
 					}
 				} footer: {
-					Text(.localized("Add and manage certificates used for signing applications."))
+					Text("Thêm và quản lý chứng chỉ ký ứng dụng.")
 				}
 				
-				// Ký & Cài đặt
+				// 2. Ký & Cài Đặt IPA
 				NBSection("Ký & Cài Đặt IPA") {
 					NavigationLink(destination: InstallationView()) {
 						HStack(spacing: 12) {
@@ -161,7 +115,7 @@ struct SettingsView: View {
 					}
 				}
 				
-				// Tiện ích mạng & Tệp
+				// 3. Công Cụ Mở Rộng
 				NBSection("Công Cụ Mở Rộng") {
 					NavigationLink(destination: AirShareView()) {
 						HStack(spacing: 12) {
@@ -174,9 +128,31 @@ struct SettingsView: View {
 					Text("Chia sẻ và nhận file IPA không dây qua mạng WiFi cục bộ.")
 				}
 				
-				_directories()
+				// 4. Khác
+				NBSection("Khác") {
+					Button {
+						UIApplication.open(URL.documentsDirectory.toSharedDocumentsURL()!)
+					} label: {
+						HStack(spacing: 12) {
+							SettingsIconBadge(systemName: "folder.fill", color: .blue)
+							Text(.localized("Open Documents"))
+								.foregroundColor(.primary)
+						}
+					}
+					Button {
+						UIApplication.open(FileManager.default.archives.toSharedDocumentsURL()!)
+					} label: {
+						HStack(spacing: 12) {
+							SettingsIconBadge(systemName: "archivebox", color: .cyan)
+							Text(.localized("Open Archives"))
+								.foregroundColor(.primary)
+						}
+					}
+				} footer: {
+					Text("Tất cả các tệp của MSign trừ chứng chỉ được chứa trong thư mục tài liệu.")
+				}
 				
-				// Đặt lại
+				// 5. Đặt lại
 				Section {
 					NavigationLink(destination: ResetView()) {
 						HStack(spacing: 12) {
@@ -186,38 +162,9 @@ struct SettingsView: View {
 						}
 					}
 				} footer: {
-					Text("Reset the applications sources, certificates, apps, and general contents.")
+					Text("Đặt lại kho ứng dụng, chứng chỉ, app, và những thứ khác.")
 				}
 			}
-		}
-	}
-}
-
-// MARK: - View extension
-extension SettingsView {
-	@ViewBuilder
-	private func _directories() -> some View {
-		NBSection(.localized("Misc")) {
-			Button {
-				UIApplication.open(URL.documentsDirectory.toSharedDocumentsURL()!)
-			} label: {
-				HStack(spacing: 12) {
-					SettingsIconBadge(systemName: "folder.fill", color: .blue)
-					Text(.localized("Open Documents"))
-						.foregroundColor(.primary)
-				}
-			}
-			Button {
-				UIApplication.open(FileManager.default.archives.toSharedDocumentsURL()!)
-			} label: {
-				HStack(spacing: 12) {
-					SettingsIconBadge(systemName: "archivebox", color: .cyan)
-					Text(.localized("Open Archives"))
-						.foregroundColor(.primary)
-				}
-			}
-		} footer: {
-			Text("Tất cả các tệp của HyperSign trừ chứng chỉ được chứa trong thư mục tài liệu.")
 		}
 	}
 }

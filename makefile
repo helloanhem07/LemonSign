@@ -1,4 +1,4 @@
-NAME := HyperSign
+NAME := MSign
 PLATFORM := iphoneos
 SCHEMES := Ksign
 TMP := $(TMPDIR)/$(NAME)
@@ -44,30 +44,32 @@ $(SCHEMES): deps
 	rm -rf "$(STAGE)/"
 	mkdir -p "$(STAGE)/Payload"
 
-	@if [ -d "$(APP)/HyperSign.app" ]; then \
-		mv "$(APP)/HyperSign.app" "$(STAGE)/Payload/HyperSign.app"; \
+	@if [ -d "$(APP)/MSign.app" ]; then \
+		mv "$(APP)/MSign.app" "$(STAGE)/Payload/MSign.app"; \
 	elif [ -d "$(APP)/$(NAME).app" ]; then \
-		mv "$(APP)/$(NAME).app" "$(STAGE)/Payload/HyperSign.app"; \
+		mv "$(APP)/$(NAME).app" "$(STAGE)/Payload/MSign.app"; \
+	elif [ -d "$(APP)/HyperSign.app" ]; then \
+		mv "$(APP)/HyperSign.app" "$(STAGE)/Payload/MSign.app"; \
 	elif [ -d "$(APP)/LemonSign.app" ]; then \
-		mv "$(APP)/LemonSign.app" "$(STAGE)/Payload/HyperSign.app"; \
+		mv "$(APP)/LemonSign.app" "$(STAGE)/Payload/MSign.app"; \
 	elif [ -d "$(APP)/2809.app" ]; then \
-		mv "$(APP)/2809.app" "$(STAGE)/Payload/HyperSign.app"; \
+		mv "$(APP)/2809.app" "$(STAGE)/Payload/MSign.app"; \
 	elif [ -d "$(APP)/$@.app" ]; then \
-		mv "$(APP)/$@.app" "$(STAGE)/Payload/HyperSign.app"; \
+		mv "$(APP)/$@.app" "$(STAGE)/Payload/MSign.app"; \
 	else \
-		mv "$$(find $(APP) -name '*.app' -maxdepth 1)" "$(STAGE)/Payload/HyperSign.app"; \
+		mv "$$(find $(APP) -name '*.app' -maxdepth 1)" "$(STAGE)/Payload/MSign.app"; \
 	fi
 
-	chmod -R 0755 "$(STAGE)/Payload/HyperSign.app"
-	strip -x -S "$$(find $(STAGE)/Payload/HyperSign.app -maxdepth 1 -type f -perm +111 2>/dev/null | head -n 1)" 2>/dev/null || true
-	codesign --force --sign - --timestamp=none "$(STAGE)/Payload/HyperSign.app"
+	chmod -R 0755 "$(STAGE)/Payload/MSign.app"
+	strip -x -S "$$(find $(STAGE)/Payload/MSign.app -maxdepth 1 -type f -perm +111 2>/dev/null | head -n 1)" 2>/dev/null || true
+	codesign --force --sign - --timestamp=none "$(STAGE)/Payload/MSign.app"
 
-	cp deps/* "$(STAGE)/Payload/HyperSign.app/" || true
-	cp -f Ksign/Resources/AppIcons/*.png "$(STAGE)/Payload/HyperSign.app/" || true
+	cp deps/* "$(STAGE)/Payload/MSign.app/" || true
+	cp -f Ksign/Resources/AppIcons/*.png "$(STAGE)/Payload/MSign.app/" || true
 
-	rm -rf "$(STAGE)/Payload/HyperSign.app/_CodeSignature"
+	rm -rf "$(STAGE)/Payload/MSign.app/_CodeSignature"
 	ln -sf "$(STAGE)/Payload" Payload
 	
 	mkdir -p packages
-	zip -r9 "packages/HyperSign.ipa" Payload
-	rm -f packages/LemonSign.ipa packages/2809.ipa packages/Ksign.ipa
+	zip -r9 "packages/MSign.ipa" Payload
+	rm -f packages/HyperSign.ipa packages/LemonSign.ipa packages/2809.ipa packages/Ksign.ipa

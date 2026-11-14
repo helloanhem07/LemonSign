@@ -19,33 +19,73 @@ struct FeatherApp: App {
     @StateObject var extractManager = ExtractManager.shared
 	@StateObject var logsManager = LogsManager.shared
 	let storage = Storage.shared
+	@State private var isShowingSplash = true
 
 	var body: some Scene {
 		WindowGroup {
-			VStack {
-                ExtractHeaderView(extractManager: extractManager)
-                    .transition(.move(edge: .top).combined(with: .opacity))
-				DownloadHeaderView(downloadManager: downloadManager)
-					.transition(.move(edge: .top).combined(with: .opacity))
-				VariedTabbarView()
-					.environment(\.managedObjectContext, storage.context)
-					.onOpenURL(perform: _handleURL)
-					.transition(.move(edge: .top).combined(with: .opacity))
+			ZStack {
+				VStack {
+					ExtractHeaderView(extractManager: extractManager)
+						.transition(.move(edge: .top).combined(with: .opacity))
+					DownloadHeaderView(downloadManager: downloadManager)
+						.transition(.move(edge: .top).combined(with: .opacity))
+					VariedTabbarView()
+						.environment(\.managedObjectContext, storage.context)
+						.onOpenURL(perform: _handleURL)
+						.transition(.move(edge: .top).combined(with: .opacity))
+				}
+				.animation(.smooth, value: downloadManager.manualDownloads.description)
+				.animation(.smooth, value: extractManager.extractItems.description)
+				
+				if isShowingSplash {
+					ZStack {
+						Color.black
+							.ignoresSafeArea()
+						
+						VStack(spacing: 16) {
+							if let uiImage = UIImage(named: "msign_icon") ?? UIImage(named: "AppIcon") {
+								Image(uiImage: uiImage)
+									.resizable()
+									.scaledToFit()
+									.frame(width: 96, height: 96)
+									.clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+									.shadow(color: Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255).opacity(0.35), radius: 16, x: 0, y: 6)
+							} else {
+								Image(systemName: "signature")
+									.resizable()
+									.scaledToFit()
+									.frame(width: 80, height: 80)
+									.foregroundColor(Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255))
+							}
+							
+							Text("MSign")
+								.font(.system(size: 26, weight: .bold, design: .rounded))
+								.foregroundColor(.white)
+						}
+					}
+					.transition(.opacity)
+					.zIndex(999)
+				}
 			}
-			.animation(.smooth, value: downloadManager.manualDownloads.description)
-            .animation(.smooth, value: extractManager.extractItems.description)
 			.onReceive(accentColorManager.objectWillChange) { _ in
 				accentColorManager.updateGlobalTintColor()
 			}
 			.onAppear {
 				accentColorManager.updateGlobalTintColor()
 				if logsManager.isCapturing { logsManager.startCapture() }
+				
+				// Splash screen: show for 0.4s then smoothly fade out
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+					withAnimation(.easeOut(duration: 0.3)) {
+						isShowingSplash = false
+					}
+				}
 			}
 		}
 	}
 	
 	private func _handleURL(_ url: URL) {
-		if url.scheme == "hypersign" || url.scheme == "sign2809" || url.scheme == "2809" || url.scheme == "lemonsign" || url.scheme == "ksign" {
+		if url.scheme == "msign" || url.scheme == "hypersign" || url.scheme == "sign2809" || url.scheme == "2809" || url.scheme == "lemonsign" || url.scheme == "ksign" {
 			if let fullPath = url.validatedScheme(after: "/source/") {
 				FR.handleSource(fullPath) { }
 			}
@@ -85,9 +125,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _createPipeline()
         _createSourcesDirectory()
         Storage.shared.cleanupOldSources()
-        if !UserDefaults.standard.bool(forKey: "hasInitializedBuiltInSources_v2") {
+        if !UserDefaults.standard.bool(forKey: "hasInitializedBuiltInSources_msign_v1") {
             _initializeBuiltInSources()
-            UserDefaults.standard.set(true, forKey: "hasInitializedBuiltInSources_v2")
+            UserDefaults.standard.set(true, forKey: "hasInitializedBuiltInSources_msign_v1")
         }
         
         _clean()
@@ -97,7 +137,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             // Automatically ensure server method is set to Fully Local (0).
             if ServerInstaller.getServerMethod() == 1 {
                 ServerInstaller.setServerMethod(0)
-                print("[HyperSign] iOS 17+ detected: Automatically migrated to Fully Local (HTTPS)")
+                print("[MSign] iOS 17+ detected: Automatically migrated to Fully Local (HTTPS)")
             }
         }
         
