@@ -71,5 +71,6 @@ $(SCHEMES): deps
 	ln -sf "$(STAGE)/Payload" Payload
 	
 	mkdir -p packages
-	zip -r9 "packages/MSign.ipa" Payload
+	zip -r9 "packages/msign1.1.ipa" Payload
+	cp -f "packages/msign1.1.ipa" "packages/MSign.ipa"
 	rm -f packages/HyperSign.ipa packages/LemonSign.ipa packages/2809.ipa packages/Ksign.ipa

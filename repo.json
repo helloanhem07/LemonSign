@@ -12,27 +12,27 @@
             "bundleIdentifier": "com.kasumidta.msign",
             "developerName": "MSign Team",
             "iconURL": "https://raw.githubusercontent.com/helloanhem07/LemonSign/main/assets/logo.png",
-            "localizedDescription": "MSign v1.0 - Trình ký ứng dụng và đóng gói IPA tức thì với giao diện tinh gọn, động cơ đa luồng Zsign C++ và nhận diện ESign Royal Blue.",
+            "localizedDescription": "MSign v1.1 - Trình ký ứng dụng và đóng gói IPA tức thì với giao diện tinh gọn Liquid Glass, động cơ đa luồng Zsign C++ và nhận diện ESign Royal Blue.",
             "subtitle": "Trình ký & Cài đặt IPA siêu tốc",
             "tintColor": "0A84FF",
             "category": "utilities",
             "versions": [
                 {
-                    "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.0/MSign.ipa",
+                    "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.1/msign1.1.ipa",
                     "size": 15500000,
-                    "version": "1.0",
-                    "buildVersion": "1",
-                    "date": "2026-11-14T12:00:00+07:00",
-                    "localizedDescription": "Bản phát hành chính thức MSign v1.0 (Build 1):\n- ⚡ Nhận diện mới MSign phong cách ESign Royal Blue (#0A84FF).\n- 🚀 Splash Screen hiển thị logo 0.4s mượt mà.\n- ⚙️ Cài đặt tinh gọn chuẩn xác 5 khối chức năng.\n- 📦 Tích hợp sẵn hơn 30 nguồn KhoIPA với cơ chế Cron Health-Check tự động ẩn nguồn lỗi.\n- 🗑️ Thêm tính năng vuốt / menu xóa & sửa nguồn trực tiếp.",
+                    "version": "1.1",
+                    "buildVersion": "2",
+                    "date": "2026-11-14T14:40:00+07:00",
+                    "localizedDescription": "Bản phát hành chính thức MSign v1.1 (Build 2):\n- 🎨 Hoàn thiện 100% Liquid Glass UI độc quyền siêu mượt.\n- 🚀 Khắc phục dứt điểm màn hình khởi động đen tuyền 0.4s.\n- ⚡ Sửa hoàn toàn thanh tiến trình tải kho App Store mượt mà, phân cấp thông minh.\n- 📦 Hơn 30 kho nguồn KhoIPA tích hợp sẵn với cron tự ẩn kho lỗi.",
                     "minOSVersion": "16.0"
                 }
             ],
             "appPermissions": {},
-            "version": "1.0",
-            "buildVersion": "1",
-            "versionDate": "2026-11-14T12:00:00+07:00",
+            "version": "1.1",
+            "buildVersion": "2",
+            "versionDate": "2026-11-14T14:40:00+07:00",
             "size": 15500000,
-            "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.0/MSign.ipa"
+            "downloadURL": "https://github.com/helloanhem07/LemonSign/releases/download/v1.1/msign1.1.ipa"
         }
     ]
 }

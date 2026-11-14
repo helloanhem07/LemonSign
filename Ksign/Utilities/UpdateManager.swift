@@ -11,9 +11,9 @@ import UIKit
 final class UpdateManager: NSObject {
 	static let shared = UpdateManager()
 
-	static let currentAppVersion = "1.0"
-	static let currentAppBuild = 1
-	static let currentAppTag = "v1.0"
+	static let currentAppVersion = "1.1"
+	static let currentAppBuild = 2
+	static let currentAppTag = "v1.1"
 
 	private let _repoJsonUrl = "https://raw.githubusercontent.com/helloanhem07/LemonSign/refs/heads/main/repo.json"
 	private let _releasesApiUrl = "https://api.github.com/repos/helloanhem07/LemonSign/releases?per_page=5"
@@ -56,7 +56,7 @@ final class UpdateManager: NSObject {
 				let remoteVersion = msignApp["version"] as? String ?? "1.0"
 				let remoteBuildStr = (msignApp["buildVersion"] as? String) ?? "\(msignApp["buildVersion"] as? Int ?? 1)"
 				let remoteBuild = Int(remoteBuildStr) ?? 1
-				let downloadURL = msignApp["downloadURL"] as? String ?? "https://github.com/helloanhem07/LemonSign/releases/download/v1.0/MSign.ipa"
+				let downloadURL = msignApp["downloadURL"] as? String ?? "https://github.com/helloanhem07/LemonSign/releases/download/v1.1/msign1.1.ipa"
 				let desc = msignApp["localizedDescription"] as? String ?? ""
 
 				DispatchQueue.main.async {

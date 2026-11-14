@@ -52,7 +52,9 @@ jobs:
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: MSign-IPA
-          path: packages/MSign.ipa
+          name: msign1.1
+          path: |
+            packages/msign1.1.ipa
+            packages/MSign.ipa
           if-no-files-found: error
           retention-days: 14

@@ -97,7 +97,8 @@ final class SourcesViewModel: ObservableObject {
 		await MainActor.run {
 			self.isFetching = true
 			self.totalSourcesCount = sourcesArray.count
-			self.loadedSourcesCount = 0
+			let alreadyLoaded = refresh ? 0 : sourcesArray.filter { self.sources[$0] != nil }.count
+			self.loadedSourcesCount = alreadyLoaded
 			self.currentLoadingSourceName = ""
 			if refresh {
 				self.sources = [:]

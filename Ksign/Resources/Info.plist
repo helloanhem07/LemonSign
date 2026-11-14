@@ -14,7 +14,7 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>CFBundleTypeName</key>
 			<string>iOS Package Archive</string>
 			<key>CFBundleTypeRole</key>
@@ -28,7 +28,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>CFBundleTypeName</key>
 			<string>AirDrop friendly iOS app</string>
 			<key>CFBundleTypeRole</key>
@@ -42,7 +42,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>CFBundleTypeName</key>
 			<string>MSign Certificate Package</string>
 			<key>CFBundleTypeRole</key>
@@ -89,7 +89,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>CFBundleURLName</key>
 			<string>com.kasumidta.msign</string>
 			<key>CFBundleURLSchemes</key>
@@ -123,7 +123,7 @@
 			<key>UTTypeDescription</key>
 			<string>iOS Package Archive</string>
 			<key>UTTypeIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconText</key>
@@ -153,7 +153,7 @@
 			<key>UTTypeDescription</key>
 			<string>AirDrop friendly iOS app</string>
 			<key>UTTypeIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconBadgeName</key>
@@ -184,7 +184,7 @@
 			<key>UTTypeDescription</key>
 			<string>MSign Certificate Package</string>
 			<key>UTTypeIconFile</key>
-			<string>ksign_extension</string>
+			<string>msign_icon</string>
 			<key>UTTypeIcons</key>
 			<dict>
 				<key>UTTypeIconText</key>

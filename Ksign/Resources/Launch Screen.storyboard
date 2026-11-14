@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ksign_extension.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-Py-TkU" userLabel="msign_icon">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msign_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-Py-TkU" userLabel="msign_icon">
                                 <rect key="frame" x="148.66666666666666" y="378" width="96" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="kwv-cb-TEl"/>
@@ -40,9 +40,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ksign_extension.png" width="1024" height="1024"/>
+        <image name="msign_icon" width="1024" height="1024"/>
         <namedColor name="AccentColor">
-            <color red="1" green="0.83921568627450982" blue="0.0392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0392156862745098" green="0.51764705882352946" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

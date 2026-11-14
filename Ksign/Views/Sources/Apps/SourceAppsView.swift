@@ -76,35 +76,85 @@ struct SourceAppsView: View {
                 )
                 .ignoresSafeArea()
             } else {
-                if viewModel.isFetching {
+                if viewModel.isFetching || isLoading {
                     VStack(spacing: 16) {
-                        ProgressView(value: viewModel.totalSourcesCount > 0 ? min(1.0, Double(viewModel.loadedSourcesCount) / Double(max(1, viewModel.totalSourcesCount))) : nil)
-                            .progressViewStyle(LinearProgressViewStyle(tint: Color.accentColor))
-                            .frame(width: 240)
+                        ZStack {
+                            Circle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [
+                                            Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255).opacity(0.25),
+                                            Color(red: 0x00/255, green: 0xC6/255, blue: 0xFF/255).opacity(0.12)
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                                .frame(width: 60, height: 60)
+                            
+                            Image(systemName: "shippingbox.fill")
+                                .font(.system(size: 26, weight: .semibold))
+                                .foregroundStyle(
+                                    LinearGradient(
+                                        colors: [
+                                            Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255),
+                                            Color(red: 0x00/255, green: 0xC6/255, blue: 0xFF/255)
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                        }
                         
                         VStack(spacing: 6) {
                             Text("Đang tải dữ liệu kho ứng dụng...")
-                                .font(.headline)
-                                .foregroundColor(.primary)
+                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                                .foregroundColor(.white)
                             
                             if viewModel.totalSourcesCount > 0 {
                                 Text("\(viewModel.loadedSourcesCount) / \(viewModel.totalSourcesCount) kho nguồn")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                            }
-                            
-                            if !viewModel.currentLoadingSourceName.isEmpty {
-                                Text(viewModel.currentLoadingSourceName)
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
+                                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                                    .foregroundColor(Color.white.opacity(0.7))
+                            } else {
+                                Text("Đang kết nối các kho IPA...")
+                                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                                    .foregroundColor(Color.white.opacity(0.7))
                             }
                         }
+                        
+                        ProgressView(value: viewModel.totalSourcesCount > 0 ? min(1.0, Double(viewModel.loadedSourcesCount) / Double(max(1, viewModel.totalSourcesCount))) : nil)
+                            .progressViewStyle(LinearProgressViewStyle(tint: Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255)))
+                            .frame(width: 220)
+                        
+                        if !viewModel.currentLoadingSourceName.isEmpty {
+                            Text(viewModel.currentLoadingSourceName)
+                                .font(.system(size: 11, weight: .regular))
+                                .foregroundColor(Color.white.opacity(0.6))
+                                .lineLimit(1)
+                                .frame(maxWidth: 220)
+                        }
                     }
-                    .padding(24)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .shadow(color: .black.opacity(0.12), radius: 10, x: 0, y: 5)
+                    .padding(.horizontal, 28)
+                    .padding(.vertical, 24)
+                    .background(
+                        RoundedRectangle(cornerRadius: 22, style: .continuous)
+                            .fill(.ultraThinMaterial)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                                    .stroke(
+                                        LinearGradient(
+                                            colors: [
+                                                Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255).opacity(0.4),
+                                                Color.white.opacity(0.12)
+                                            ],
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        ),
+                                        lineWidth: 1
+                                    )
+                            )
+                    )
+                    .shadow(color: Color.black.opacity(0.4), radius: 20, x: 0, y: 10)
                 } else if #available(iOS 17, *) {
                     ContentUnavailableView {
                         Label(.localized("No Apps Available"), systemImage: "square.stack.3d.up.slash")
@@ -117,28 +167,34 @@ struct SourceAppsView: View {
             }
         }
         .overlay(alignment: .top) {
-            if viewModel.isFetching && viewModel.totalSourcesCount > 0 && viewModel.loadedSourcesCount < viewModel.totalSourcesCount {
+            if let sources = _sources, !sources.isEmpty, viewModel.isFetching && viewModel.totalSourcesCount > 0 && viewModel.loadedSourcesCount < viewModel.totalSourcesCount {
                 VStack(spacing: 0) {
                     ProgressView(value: Double(viewModel.loadedSourcesCount), total: Double(max(1, viewModel.totalSourcesCount)))
-                        .progressViewStyle(LinearProgressViewStyle(tint: Color.accentColor))
-                        .frame(height: 3)
+                        .progressViewStyle(LinearProgressViewStyle(tint: Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255)))
+                        .frame(height: 2.5)
                     
                     HStack(spacing: 8) {
                         ProgressView()
                             .scaleEffect(0.65)
-                        Text("Đang tải thêm kho IPA...")
+                        Text("Đang nạp thêm nguồn IPA...")
                             .font(.system(size: 11, weight: .medium))
                             .foregroundColor(.secondary)
                         Spacer()
                         Text("\(viewModel.loadedSourcesCount)/\(viewModel.totalSourcesCount)")
                             .font(.system(size: 11, weight: .semibold, design: .monospaced))
-                            .foregroundColor(.secondary)
+                            .foregroundColor(Color(red: 0x0A/255, green: 0x84/255, blue: 0xFF/255))
                     }
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 4)
+                    .padding(.vertical, 6)
                     .background(.ultraThinMaterial)
+                    .overlay(
+                        Rectangle()
+                            .frame(height: 0.5)
+                            .foregroundColor(Color.white.opacity(0.1)),
+                        alignment: .bottom
+                    )
                 }
-                .transition(.move(edge: .top).combined(with: .opacity))
+                .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.25), value: viewModel.isFetching)
