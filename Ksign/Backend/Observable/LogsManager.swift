@@ -49,7 +49,7 @@ final class LogsManager: ObservableObject {
 		exportDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		let exportTimestamp = exportDateFormatter.string(from: Date())
 
-		var logText = "2809 Logs Export\n"
+		var logText = "HyperSign Logs Export\n"
 		logText += "Exported: \(exportTimestamp)\n"
 		logText += "Total entries: \(entries.count)\n"
 		logText += String(repeating: "=", count: 30) + "\n\n"

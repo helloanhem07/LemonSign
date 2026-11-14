@@ -45,7 +45,7 @@ struct FeatherApp: App {
 	}
 	
 	private func _handleURL(_ url: URL) {
-		if url.scheme == "sign2809" || url.scheme == "2809" || url.scheme == "lemonsign" || url.scheme == "ksign" {
+		if url.scheme == "hypersign" || url.scheme == "sign2809" || url.scheme == "2809" || url.scheme == "lemonsign" || url.scheme == "ksign" {
 			if let fullPath = url.validatedScheme(after: "/source/") {
 				FR.handleSource(fullPath) { }
 			}
@@ -97,7 +97,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             // Automatically ensure server method is set to Fully Local (0).
             if ServerInstaller.getServerMethod() == 1 {
                 ServerInstaller.setServerMethod(0)
-                print("[2809] iOS 17+ detected: Automatically migrated to Fully Local (HTTPS)")
+                print("[HyperSign] iOS 17+ detected: Automatically migrated to Fully Local (HTTPS)")
             }
         }
         

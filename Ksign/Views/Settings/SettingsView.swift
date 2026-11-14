@@ -1,9 +1,9 @@
 //
 //  SettingsView.swift
-//  2809
+//  HyperSign
 //
 //  Created by samara on 10.04.2025.
-//  Refactored for 2809 on 14.11.2026.
+//  Refactored for HyperSign on 14.11.2026.
 //
 
 import SwiftUI
@@ -65,6 +65,25 @@ struct SettingsView: View {
 								.foregroundColor(.primary)
 						}
 					}
+				}
+				
+				// Phân vùng Tinh Chỉnh Hệ Thống HyperGestalt
+				NBSection("Tinh Chỉnh Hệ Thống") {
+					NavigationLink(destination: HyperGestaltView()) {
+						HStack(spacing: 12) {
+							SettingsIconBadge(systemName: "rocket.fill", color: .red)
+							VStack(alignment: .leading, spacing: 2) {
+								Text("HyperGestalt Tweaks")
+									.foregroundColor(.primary)
+									.font(.body)
+								Text("Dynamic Island, Pin 80%, Tắt âm cam...")
+									.font(.caption2)
+									.foregroundColor(.secondary)
+							}
+						}
+					}
+				} footer: {
+					Text("Can thiệp cờ MobileGestalt mở khóa tính năng phần cứng đời mới và gỡ giới hạn khu vực.")
 				}
 				
 				// Giao diện
@@ -198,7 +217,7 @@ extension SettingsView {
 				}
 			}
 		} footer: {
-			Text("Tất cả các tệp của 2809 trừ chứng chỉ được chứa trong thư mục tài liệu.")
+			Text("Tất cả các tệp của HyperSign trừ chứng chỉ được chứa trong thư mục tài liệu.")
 		}
 	}
 }

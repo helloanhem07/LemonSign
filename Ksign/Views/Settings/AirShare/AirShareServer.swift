@@ -17,7 +17,7 @@ final class AirShareServer: ObservableObject {
     @Published var uploadCount: Int = 0
     
     private var listener: NWListener?
-    private let queue = DispatchQueue(label: "com.2809.airshare.server", qos: .userInitiated)
+    private let queue = DispatchQueue(label: "com.hypersign.airshare.server", qos: .userInitiated)
     let port: UInt16 = 8088
     
     private init() {}
@@ -304,7 +304,7 @@ final class AirShareServer: ObservableObject {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>2809 AirShare</title>
+            <title>HyperSign AirShare</title>
             <style>
                 :root {
                     --lemon: #FFD60A;
@@ -350,7 +350,7 @@ final class AirShareServer: ObservableObject {
             <div class="container">
                 <header>
                     <div class="logo">🍋</div>
-                    <h1>2809 AirShare</h1>
+                    <h1>HyperSign AirShare</h1>
                     <p class="sub">Truyền tải và quản lý tệp IPA qua mạng Wi-Fi nội bộ</p>
                     <div class="badge">🟢 Mạng LAN Đang Hoạt Động</div>
                 </header>

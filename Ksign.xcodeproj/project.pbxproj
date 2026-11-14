@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		336D43972DB7454A00206400 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		3379C1B92DA869A1004372DA /* 2809.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2809.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3379C1B92DA869A1004372DA /* HyperSign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABA5D192DB3C87800BFCD2C /* KsignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KsignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,7 +128,7 @@
 		3379C1BA2DA869A1004372DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3379C1B92DA869A1004372DA /* 2809.app */,
+				3379C1B92DA869A1004372DA /* HyperSign.app */,
 				AABA5D192DB3C87800BFCD2C /* KsignTests.xctest */,
 			);
 			name = Products;
@@ -173,7 +173,7 @@
 				C42CC1AE2F4370F20064A4A2 /* IDeviceSwift */,
 			);
 			productName = Feather;
-			productReference = 3379C1B92DA869A1004372DA /* 2809.app */;
+			productReference = 3379C1B92DA869A1004372DA /* HyperSign.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AABA5D182DB3C87800BFCD2C /* KsignTests */ = {
@@ -469,9 +469,9 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ksign/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = 2809;
+				INFOPLIST_KEY_CFBundleDisplayName = HyperSign;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (c) 2026 2809 Team";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (c) 2026 HyperSign Team";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -491,8 +491,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 5.2.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kasumidta.sign2809;
-				PRODUCT_NAME = 2809;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kasumidta.hypersign;
+				PRODUCT_NAME = HyperSign;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -537,9 +537,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "SERVER=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ksign/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = 2809;
+				INFOPLIST_KEY_CFBundleDisplayName = HyperSign;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (c) 2026 2809 Team";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright (c) 2026 HyperSign Team";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -559,8 +559,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 5.2.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kasumidta.sign2809;
-				PRODUCT_NAME = 2809;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kasumidta.hypersign;
+				PRODUCT_NAME = HyperSign;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				STRIPFLAGS = "-rSTx";
@@ -598,7 +598,7 @@
 				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2809.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/2809";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperSign.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HyperSign";
 			};
 			name = Debug;
 		};
@@ -622,7 +622,7 @@
 				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2809.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/2809";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyperSign.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HyperSign";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

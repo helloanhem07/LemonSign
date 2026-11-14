@@ -78,11 +78,11 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release $TAG exists, updating assets..."
             gh release upload "$TAG" packages/*.ipa --clobber
-            gh release edit "$TAG" --title "2809 v$APP_VER" --notes "$(cat release_notes.md)"
+            gh release edit "$TAG" --title "HyperSign v$APP_VER" --notes "$(cat release_notes.md)"
           else
             echo "Creating new release $TAG..."
             gh release create "$TAG" packages/*.ipa \
-              --title "2809 v$APP_VER" \
+              --title "HyperSign v$APP_VER" \
               --notes "$(cat release_notes.md)" \
               --target ${{ github.sha }}
           fi
@@ -90,11 +90,11 @@ jobs:
           if gh release view beta >/dev/null 2>&1; then
             echo "Release beta exists, updating assets..."
             gh release upload beta packages/*.ipa --clobber
-            gh release edit beta --title "2809 Beta Build" --notes "$(cat release_notes.md)"
+            gh release edit beta --title "HyperSign Beta Build" --notes "$(cat release_notes.md)"
           else
             echo "Creating new beta release..."
             gh release create beta packages/*.ipa \
-              --title "2809 Beta Build" \
+              --title "HyperSign Beta Build" \
               --notes "$(cat release_notes.md)" \
               --prerelease \
               --target ${{ github.sha }}
@@ -110,7 +110,7 @@ jobs:
           REPO="${{ github.repository }}"
           APP_VER=$(jq -r '.apps[0].version' repo.json 2>/dev/null || echo "2.0")
           TAG="v$APP_VER"
-          FILENAME="2809.ipa"
+          FILENAME="HyperSign.ipa"
           
           DOWNLOAD_URL="https://github.com/$REPO/releases/download/$TAG/$FILENAME"
           RELEASE_URL="https://github.com/$REPO/releases/tag/$TAG"

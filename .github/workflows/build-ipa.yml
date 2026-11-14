@@ -1,4 +1,4 @@
-name: Build 2809 IPA
+name: Build HyperSign IPA
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: 2809-IPA
-          path: packages/2809.ipa
+          name: HyperSign-IPA
+          path: packages/HyperSign.ipa
           if-no-files-found: error
           retention-days: 14

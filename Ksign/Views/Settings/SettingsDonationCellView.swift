@@ -75,14 +75,18 @@ struct SettingsDonationCellView: View {
 			}
 			
 			VStack(alignment: .leading, spacing: 3) {
-				Text("2809")
-					.font(.title3.bold())
+				HStack(spacing: 6) {
+					Text("HyperSign")
+						.font(.title3.bold())
+					Text("🚀")
+						.font(.subheadline)
+				}
 				
-				Text("v\(Bundle.main.version) • On-Device Signer")
+				Text("v\(Bundle.main.version) • Rocket Signer & Tweaker")
 					.font(.caption)
 					.foregroundStyle(.secondary)
 				
-				Text("Powered by Zsign Engine")
+				Text("Powered by Zsign HyperTurbo Engine")
 					.font(.caption2)
 					.foregroundStyle(.tertiary)
 			}
@@ -101,7 +105,7 @@ struct SettingsDonationCellView: View {
 				) {
 					_selectedInfo = SystemInfoItem(
 						title: "Hệ điều hành iOS",
-						message: "Phiên bản: iOS \(UIDevice.current.systemVersion) (\(UIDevice.current.model)). 2809 tương thích và hoạt động ổn định từ iOS 14.0 trở lên."
+						message: "Phiên bản: iOS \(UIDevice.current.systemVersion) (\(UIDevice.current.model)). HyperSign tương thích và hoạt động ổn định từ iOS 14.0 trở lên."
 					)
 				}
 				
@@ -114,8 +118,8 @@ struct SettingsDonationCellView: View {
 					_selectedInfo = SystemInfoItem(
 						title: _isJailbroken ? "Trạng thái: Đã Jailbreak (JB)" : "Trạng thái: Chưa Jailbreak (Stock)",
 						message: _isJailbroken
-							? "Thiết bị của bạn đã được Jailbreak (Rootless hoặc Rootful). Bạn có thể ký và cài đặt app hoàn toàn tự do."
-							: "Thiết bị đang chạy iOS nguyên bản (chưa bẻ khóa). 2809 sử dụng chứng chỉ cá nhân (.p12) để sideload ứng dụng an toàn mà không cần can thiệp hệ thống."
+							? "Thiết bị của bạn đã được Jailbreak (Rootless hoặc Rootful). Bạn có thể ký, cài đặt app và áp dụng tinh chỉnh HyperGestalt trực tiếp."
+							: "Thiết bị đang chạy iOS nguyên bản (chưa bẻ khóa). HyperSign sử dụng chứng chỉ cá nhân (.p12) để sideload ứng dụng an toàn mà không cần can thiệp hệ thống."
 					)
 				}
 				
@@ -125,7 +129,7 @@ struct SettingsDonationCellView: View {
 				) {
 					_selectedInfo = SystemInfoItem(
 						title: "Trình ký ngoại tuyến (Offline Engine)",
-						message: "Toàn bộ quá trình giải mã, băm SHA và ký chứng chỉ P12 được xử lý 100% bằng engine C++ Zsign ngay trên thiết bị mà không cần kết nối mạng. Chứng chỉ và file IPA của bạn được bảo mật tuyệt đối, không bao giờ bị tải lên máy chủ bên thứ 3."
+						message: "Toàn bộ quá trình giải mã, băm SHA và ký chứng chỉ P12 được xử lý 100% bằng engine C++ Zsign HyperTurbo ngay trên chip thiết bị mà không cần kết nối mạng. Chứng chỉ và file IPA của bạn được bảo mật tuyệt đối, không bao giờ bị tải lên máy chủ bên thứ 3."
 					)
 				}
 				
@@ -135,7 +139,7 @@ struct SettingsDonationCellView: View {
 				) {
 					_selectedInfo = SystemInfoItem(
 						title: "Cài đặt an toàn (Safe Install)",
-						message: "2809 khởi chạy máy chủ mini HTTPS chạy ngầm cục bộ (Localhost OTA) và hỗ trợ IDevice Tunnel trực tiếp trên thiết bị để cài app đã ký lên màn hình chính an toàn, không lo lỗi chứng chỉ mạng trung gian."
+						message: "HyperSign khởi chạy máy chủ mini HTTPS chạy ngầm cục bộ (Localhost OTA) và hỗ trợ IDevice Tunnel trực tiếp trên thiết bị để cài app đã ký lên màn hình chính an toàn, không lo lỗi chứng chỉ mạng trung gian."
 					)
 				}
 			}
